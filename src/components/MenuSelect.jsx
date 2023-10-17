@@ -6,7 +6,7 @@ export default function MenuSelect({children,bg,bgBlur,onMouseEnter,onMouseLeave
     <Box
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
-    height={650}
+    height={660}
     id={id}
     sx={{
       backgroundImage: isHover ? `url(${bgBlur})` : `url(${bg})`,

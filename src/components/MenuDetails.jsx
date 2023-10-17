@@ -6,8 +6,8 @@ const MenuDetails = ({children, isHover, bgColor}) => {
     <Card style={{
       backgroundColor: isHover ? bgColor : '#0007',
       width:'100%',
-      padding: isHover ? '15% 0' : '15px 0',
-      transition: '0.1s linear'
+      padding: isHover ? '10% 0' : '15px 0',
+      transition: '0.3s linear',
     }}>
       <CardContent>
         {children}

@@ -39,7 +39,6 @@ export default function FullWidthGrid() {
 
   const handleBoxLeave = () => {
     setHoveredBox(null);
-    console.log(hoveredBox.id);
   };
 
   return (
