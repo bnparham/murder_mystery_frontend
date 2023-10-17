@@ -24,7 +24,7 @@ import Fingerprint from '@mui/icons-material/Fingerprint';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#000',
   ...theme.typography.body2,
-  padding: theme.spacing(0.4),
+  padding: theme.spacing(0.1),
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));

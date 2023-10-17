@@ -6,6 +6,7 @@ const MenuDetails = ({children}) => {
     <Card style={{
       backgroundColor:'#0007',
       width:'100%',
+      padding: '15px',
     }}>
       <CardContent>
         {children}
