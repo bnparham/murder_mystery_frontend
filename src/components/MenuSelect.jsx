@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React from 'react'
 
-export default function MenuSelect({children,backgroundImage,onMouseEnter,onMouseLeave,id,isHover}) {
+export default function MenuSelect({children,bg,bgBlur,onMouseEnter,onMouseLeave,id,isHover}) {
   return (
     <Box
     onMouseEnter={onMouseEnter}
@@ -9,13 +9,13 @@ export default function MenuSelect({children,backgroundImage,onMouseEnter,onMous
     height={650}
     id={id}
     sx={{
-      backgroundImage: `url(${backgroundImage})`,
+      backgroundImage: isHover ? `url(${bgBlur})` : `url(${bg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      filter: isHover ? 'blur(3px)' : 'none',
-      transition: 'filter 0.3s ease',
-      alignItems: 'flex-end',
+      transition: '0.3s ease',
       display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'end',
       }}
   >
     {children}

@@ -6,9 +6,14 @@ import Grid from '@mui/material/Unstable_Grid2';
 
 import m1 from '../img/m1.jpg'
 import m2 from '../img/m2.jpg'
+
+import m1_blur from '../img/m1_blur.jpg'
+import m2_blur from '../img/m2_blur.jpg'
+
 import MenuSelect from './MenuSelect';
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
 import MenuDetails from './MenuDetails';
+import MenuHoverDetails from './MenuHoverDetails';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#000',
@@ -37,28 +42,30 @@ export default function FullWidthGrid() {
         <Grid xs={12} md={6}>
           <Item>
             <MenuSelect 
-              backgroundImage={m1}
+              bg={m1}
+              bgBlur={m1_blur}
               onMouseEnter={(e) => handleBoxHover(e)}
               onMouseLeave={handleBoxLeave}
               id={'crimeReport'}
               isHover={hoveredBox?.id === 'crimeReport' ? true : false}
             >
               {hoveredBox?.id === 'crimeReport' 
-              ?'jooooooon'
-              :<MenuDetails>
+              ? '111'
+              : '222'
+              }
+              <MenuDetails>
                 <Typography variant="h6" color="#ffff">
                   آخرین جرائم ثبت شده در دیتابیس اداره پلیس
                 </Typography>
               </MenuDetails>
-              
-              }
             </MenuSelect>
           </Item>
         </Grid>
         <Grid xs={12} md={6}>
           <Item>
             <MenuSelect 
-              backgroundImage={m2}
+              bg={m2}
+              bgBlur={m2_blur}
               onMouseEnter={(e) => handleBoxHover(e)}
               onMouseLeave={handleBoxLeave}
               id={'enterCity'}
@@ -66,13 +73,14 @@ export default function FullWidthGrid() {
               >
                 {
                   hoveredBox?.id === 'enterCity'
-                  ?'12345'  
-                  :<MenuDetails>
-                    <Typography variant="h6" color="#ffff">
-                      اطلاعات مراکز مهم  شهر در دیتابیس شهرداری
-                    </Typography>
-                  </MenuDetails>
+                  ?'111'  
+                  :'222'
                 }
+                <MenuDetails>
+                  <Typography variant="h6" color="#ffff">
+                  اطلاعات مراکز مهم  شهر در دیتابیس شهرداری
+                  </Typography>
+                </MenuDetails>
             </MenuSelect>
           </Item>
         </Grid>
