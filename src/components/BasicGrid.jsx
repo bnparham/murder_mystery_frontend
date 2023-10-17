@@ -20,6 +20,9 @@ import LocalPoliceIcon from '@mui/icons-material/LocalPolice';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import Fingerprint from '@mui/icons-material/Fingerprint';
 
+import CrimeStepper from './CrimeStepper';
+import CityStepper from './CityStepper';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#000',
@@ -55,13 +58,14 @@ export default function FullWidthGrid() {
               isHover={hoveredBox?.id === 'crimeReport' ? true : false}
             >
 
-              <MenuDetails bgColor="#0b56a284" isHover={hoveredBox?.id === 'crimeReport' ? true : false}>
+              <MenuDetails bgColor="#0b56a220" isHover={hoveredBox?.id === 'crimeReport' ? true : false}>
                 {hoveredBox?.id === 'crimeReport'
                 ? 
                 <>
-                  <Typography variant="subtitle1" color="#ffff">
+                  <Typography variant="subtitle1" color="#ffff" sx={{mb: 5}}>
                   گزارشی دقیق از آخرین جرائم به وقوع پیوسته در شهر به همراه مدارک ضمیمه پرونده
                   </Typography>
+                  <CrimeStepper/>
                   <Button size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<LocalPoliceIcon size='large'/>}>
                       مشاهده
                   </Button>
@@ -85,13 +89,14 @@ export default function FullWidthGrid() {
               id={'enterCity'}
               isHover={hoveredBox?.id === 'enterCity' ? true : false}
               >
-                <MenuDetails bgColor="#a28e0b84" isHover={hoveredBox?.id === 'enterCity' ? true : false}>
+                <MenuDetails bgColor="#a28e0b60" isHover={hoveredBox?.id === 'enterCity' ? true : false}>
                 {hoveredBox?.id === 'enterCity' 
                 ?  
                 <>
                   <Typography variant="subtitle1" color="#ffff">
                   آخرین گزارشات فرودگاه ها، اداره مخابرات، دوربین هایی امنیتی پلیس راهور و سایر مراکز   
                   </Typography>
+                  <CityStepper/>
                   <Button color='warning' size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<Fingerprint size='large'/>}>
                       مشاهده
                   </Button>
