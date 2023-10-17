@@ -15,7 +15,9 @@ export default function MenuSelect({children,bg,bgBlur,onMouseEnter,onMouseLeave
       transition: '0.3s ease',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'end',
+      justifyContent: isHover ? 'center' : 'end',
+      alignItems : isHover ? 'center' : 'end',
+      cursor:'pointer',
       }}
   >
     {children}

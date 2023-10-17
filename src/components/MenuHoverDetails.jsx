@@ -4,13 +4,14 @@ import AlertTitle from '@mui/material/AlertTitle';
 import  Box  from '@mui/material/Box';
 
 
-export default function MenuHoverDetails() {
+export default function MenuHoverDetails({children, bgColor}) {
   return (
-    <Box>
-        <Alert severity="success">
-            <AlertTitle>Success</AlertTitle>
-            This is a success alert — <strong>check it out!</strong>
-        </Alert>
+    <Box
+        sx={{
+            backgroundColor: bgColor,
+            padding: '20px',
+        }}>
+        {children}
     </Box>
   )
 }
