@@ -24,7 +24,7 @@ import Fingerprint from '@mui/icons-material/Fingerprint';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#000',
   ...theme.typography.body2,
-  padding: theme.spacing(0.1),
+  padding: theme.spacing(0),
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
@@ -55,22 +55,24 @@ export default function FullWidthGrid() {
               id={'crimeReport'}
               isHover={hoveredBox?.id === 'crimeReport' ? true : false}
             >
-              {hoveredBox?.id === 'crimeReport' 
-              ? <MenuHoverDetails bgColor="#0b56a284">
+
+              <MenuDetails bgColor="#0b56a284" isHover={hoveredBox?.id === 'crimeReport' ? true : false}>
+                {hoveredBox?.id === 'crimeReport'
+                ? 
+                <>
                   <Typography variant="subtitle1" color="#ffff">
-                   گزارشی دقیق از آخرین جرائم به وقوع پیوسته در شهر به همراه مدارک ضمیمه پرونده
+                  گزارشی دقیق از آخرین جرائم به وقوع پیوسته در شهر به همراه مدارک ضمیمه پرونده
                   </Typography>
                   <Button size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<LocalPoliceIcon size='large'/>}>
                       مشاهده
                   </Button>
-              </MenuHoverDetails>
-              : <MenuDetails>
-                  <Typography variant="h6" color="#ffff">
-                    آخرین جرائم ثبت شده در دیتابیس اداره پلیس
-                  </Typography>
+                </>
+                :
+                <Typography variant="h6" color="#ffff">
+                  آخرین جرائم ثبت شده در دیتابیس اداره پلیس
+                </Typography>
+                }
               </MenuDetails>
-              }
-
             </MenuSelect>
           </Item>
         </Grid>
@@ -84,22 +86,23 @@ export default function FullWidthGrid() {
               id={'enterCity'}
               isHover={hoveredBox?.id === 'enterCity' ? true : false}
               >
-                {
-                  hoveredBox?.id === 'enterCity'
-                  ?<MenuHoverDetails bgColor="#a28e0b84">
-                    <Typography variant="subtitle1" color="#ffff">
-                     آخرین گزارشات فرودگاه ها، اداره مخابرات، دوربین هایی امنیتی پلیس راهور و سایر مراکز   
-                    </Typography>
-                    <Button color='warning' size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<Fingerprint size='large'/>}>
+                <MenuDetails bgColor="#a28e0b84" isHover={hoveredBox?.id === 'enterCity' ? true : false}>
+                {hoveredBox?.id === 'enterCity' 
+                ?  
+                <>
+                  <Typography variant="subtitle1" color="#ffff">
+                  آخرین گزارشات فرودگاه ها، اداره مخابرات، دوربین هایی امنیتی پلیس راهور و سایر مراکز   
+                  </Typography>
+                  <Button color='warning' size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<Fingerprint size='large'/>}>
                       مشاهده
                   </Button>
-                  </MenuHoverDetails> 
-                  :<MenuDetails>
-                    <Typography variant="h6" color="#ffff">
-                      اطلاعات مراکز مهم  شهر در دیتابیس شهرداری
-                    </Typography>
-                  </MenuDetails>
+                </>
+                :
+                <Typography variant="h6" color="#ffff">
+                    اطلاعات مراکز مهم  شهر در دیتابیس شهرداری
+                </Typography>
                 }
+                </MenuDetails>
             </MenuSelect>
           </Item>
         </Grid>

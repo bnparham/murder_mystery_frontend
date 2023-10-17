@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button, Card, CardActions, CardContent, Typography, Box } from '@mui/material';
 
-const MenuDetails = ({children}) => {
+const MenuDetails = ({children, isHover, bgColor}) => {
   return (
     <Card style={{
-      backgroundColor:'#0007',
+      backgroundColor: isHover ? bgColor : '#0007',
       width:'100%',
-      padding: '15px',
+      padding: isHover ? '15% 0' : '15px 0',
+      transition: '0.1s linear'
     }}>
       <CardContent>
         {children}
