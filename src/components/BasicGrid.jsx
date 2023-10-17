@@ -7,6 +7,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 import m1 from '../img/m1.jpg'
 import m2 from '../img/m2.jpg'
 import MenuSelect from './MenuSelect';
+import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import MenuDetails from './MenuDetails';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#000',
@@ -39,9 +41,17 @@ export default function FullWidthGrid() {
               onMouseEnter={(e) => handleBoxHover(e)}
               onMouseLeave={handleBoxLeave}
               id={'crimeReport'}
+              isHover={hoveredBox?.id === 'crimeReport' ? true : false}
             >
-              hello
-              {hoveredBox?.id === 'crimeReport' ? 'jooooooon' : ''}
+              {hoveredBox?.id === 'crimeReport' 
+              ?'jooooooon'
+              :<MenuDetails>
+                <Typography variant="h6" color="#ffff">
+                  آخرین جرائم ثبت شده در دیتابیس اداره پلیس
+                </Typography>
+              </MenuDetails>
+              
+              }
             </MenuSelect>
           </Item>
         </Grid>
@@ -52,8 +62,17 @@ export default function FullWidthGrid() {
               onMouseEnter={(e) => handleBoxHover(e)}
               onMouseLeave={handleBoxLeave}
               id={'enterCity'}
+              isHover={hoveredBox?.id === 'enterCity' ? true : false}
               >
-                {hoveredBox?.id === 'enterCity' ? '12345' : ''}
+                {
+                  hoveredBox?.id === 'enterCity'
+                  ?'12345'  
+                  :<MenuDetails>
+                    <Typography variant="h6" color="#ffff">
+                      اطلاعات مراکز مهم  شهر در دیتابیس شهرداری
+                    </Typography>
+                  </MenuDetails>
+                }
             </MenuSelect>
           </Item>
         </Grid>
