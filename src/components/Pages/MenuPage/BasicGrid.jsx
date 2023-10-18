@@ -10,10 +10,10 @@ import MenuDetails from './MenuDetails';
 import MenuHoverDetails from './MenuHoverDetails';
 
 // images
-import m1 from '../img/m1.jpg'
-import m2 from '../img/m2.jpg'
-import m1_blur from '../img/m1_blur.jpg'
-import m2_blur from '../img/m2_blur.jpg'
+import m1 from '../../../img/m1.jpg'
+import m2 from '../../../img/m2.jpg'
+import m1_blur from '../../../img/m1_blur.jpg'
+import m2_blur from '../../../img/m2_blur.jpg'
 
 // icobs
 import LocalPoliceIcon from '@mui/icons-material/LocalPolice';

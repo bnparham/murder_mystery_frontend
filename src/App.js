@@ -1,5 +1,5 @@
 import React from 'react'
-import BasicGrid from './components/BasicGrid';
+import BasicGrid from './components/Pages/MenuPage/BasicGrid';
 import AppLayout from './AppLayout';
 
 import './style.css'
