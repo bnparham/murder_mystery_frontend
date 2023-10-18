@@ -89,7 +89,7 @@ export default function FullWidthGrid() {
               id={'enterCity'}
               isHover={hoveredBox?.id === 'enterCity' ? true : false}
               >
-                <MenuDetails bgColor="#a28e0b60" isHover={hoveredBox?.id === 'enterCity' ? true : false}>
+                <MenuDetails bgColor="#0b56a220" isHover={hoveredBox?.id === 'enterCity' ? true : false}>
                 {hoveredBox?.id === 'enterCity' 
                 ?  
                 <>

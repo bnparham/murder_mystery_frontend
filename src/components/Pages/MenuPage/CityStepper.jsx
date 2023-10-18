@@ -81,7 +81,7 @@ export default function CityStepper() {
             </Alert>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
               <Box sx={{ flex: '1 1 auto' }} />
-              <Button color="primary" onClick={handleReset}>ریست</Button>
+              <Button color="primary" onClick={handleReset}>مرور مجدد</Button>
             </Box>
           </React.Fragment>
         ) : (
@@ -105,7 +105,7 @@ export default function CityStepper() {
                     Step {activeStep + 1} already completed
                   </Typography>
                 ) : (
-                  <Button color='primary' onClick={handleComplete}>
+                  <Button color='warning' onClick={handleComplete}>
                     {completedSteps() === totalSteps() - 1
                       ? 'پایان'
                       : 'متوجه شدم'}

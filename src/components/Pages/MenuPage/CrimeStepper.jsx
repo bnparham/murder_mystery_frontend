@@ -81,7 +81,7 @@ export default function CrimeStepper() {
             </Alert>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
               <Box sx={{ flex: '1 1 auto' }} />
-              <Button color="warning" onClick={handleReset}>ریست</Button>
+              <Button color="warning" onClick={handleReset}>مرور مجدد</Button>
             </Box>
           </React.Fragment>
         ) : (
