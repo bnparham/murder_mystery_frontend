@@ -87,18 +87,18 @@ export default function CityStepper() {
         ) : (
           <React.Fragment>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-              <Button
+              {/* <Button
                 color='primary'
                 disabled={activeStep === 0}
                 onClick={handleBack}
                 sx={{ mr: 1 }}
               >
                 بازگشت
-              </Button>
+              </Button> */}
               <Box sx={{ flex: '1 1 auto' }} />
-              <Button color="primary" onClick={handleNext} sx={{ mr: 1 }}>
+              {/* <Button color="primary" onClick={handleNext} sx={{ mr: 1 }}>
                 بعدی
-              </Button>
+              </Button> */}
               {activeStep !== steps.length &&
                 (completed[activeStep] ? (
                   <Typography variant="caption" sx={{ display: 'inline-block' }}>
