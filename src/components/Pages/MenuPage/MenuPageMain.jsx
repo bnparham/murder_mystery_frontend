@@ -32,7 +32,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function FullWidthGrid() {
+export default function MenuPageMain() {
 
   const [hoveredBox, setHoveredBox] = React.useState(null);
 
