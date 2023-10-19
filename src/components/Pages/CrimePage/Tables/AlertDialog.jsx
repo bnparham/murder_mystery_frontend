@@ -13,15 +13,15 @@ export default function AlertDialog({openDialog, handleClose, clue}) {
       <Dialog
         open={openDialog}
         onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
+        aria-labelledby={`alert-dialog-${clue.item_id.name}`}
+        aria-describedby={`alert-dialog-${clue.description}`}
       >
-        <DialogTitle sx={{textAlign:'center'}} id="alert-dialog-title">
+        <DialogTitle sx={{textAlign:'center'}} id={`alert-dialog-${clue.item_id.name}`}>
           {clue.item_id.name}
         </DialogTitle>
         <DialogContent>
           <img src={`${clue.item_id.image}`} height={350} width={350} alt={`${clue.item_id.name}`}/>
-          <DialogContentText sx={{textAlign:'center'}} id="alert-dialog-description">
+          <DialogContentText sx={{textAlign:'center'}} id={`alert-dialog-${clue.description}`}>
             {clue.description}
           </DialogContentText>
         </DialogContent>
