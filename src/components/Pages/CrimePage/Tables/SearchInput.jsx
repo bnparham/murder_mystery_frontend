@@ -15,7 +15,7 @@ export default function SearchInput({setStreetSearch}) {
       <div>
         <TextField
           id="standard-search"
-          label="جستجو خیابان"
+          label="جستجو بر اساس توضیحات / تاریخ"
           type="search"
           variant="standard"
           color="secondary"

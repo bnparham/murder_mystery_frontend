@@ -195,22 +195,22 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function CrimeSence({crimes, setCrimes}) {
+export default function CrimeSence({crimes, setCrimes, streetSearch}) {
 
-
-    const fetchUserData = () => {
-        fetch("http://127.0.0.1:8000/api/cime-scene/")
-        .then(response => {
-            return response.json()
-        })
-        .then(data => {
-            setCrimes(data)
-        })
-    }
-
-    useEffect(() => {
+    useEffect(
+        function(){
+            async function fetchUserData () {
+                fetch(`http://127.0.0.1:8000/api/cime-scene/?search=${streetSearch}`)
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    setCrimes(data)
+                })
+        }
         fetchUserData()
-      }, [])
+        },[streetSearch, setCrimes])
+      
 
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');

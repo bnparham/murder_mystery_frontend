@@ -38,7 +38,7 @@ export default function CrimaPageTables({value}) {
   return (
     <>
       <TabPanel value={value} index={0}>
-        <CrimeSence crimes={crimes}  setCrimes={setCrimes}/>
+        <CrimeSence crimes={crimes}  setCrimes={setCrimes} streetSearch={streetSearch}/>
         <SearchInput setStreetSearch={setStreetSearch} />
       </TabPanel>
       <TabPanel value={value} index={1}>
