@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import AreaCard from './AreaCard'
+import AlertDialog from './AlertDialog';
 
 
-export default function Clues({crimeID, setClues, clues}) {
+export default function Clues({selected,setSelected, setClues, clues}) {
+
+    const [openDialog, setOpenDialog] = React.useState(false);
+
+    const handleClickopenDialog = () => {
+        setOpenDialog(true);
+      };
+    
+      const handleClose = () => {
+        setOpenDialog(false);
+      };
 
     useEffect(
         function(){
             async function fetchClueData () {
-                fetch(`http://127.0.0.1:8000/api/clue/?search=${crimeID}`)
+                fetch(`http://127.0.0.1:8000/api/clue/?search=${selected}`)
                 .then(response => {
                     return response.json()
                 })
@@ -17,14 +28,22 @@ export default function Clues({crimeID, setClues, clues}) {
         }
         fetchClueData()
         }
-        ,[crimeID, setClues]
+        ,[selected, setClues, setSelected]
     )
 
   return (
     <div>
-        {clues.map(
-            c => <AreaCard key={c.id} clue={c}/>
-        )}
+        {selected.length === 1
+        ? clues.map(
+            c => 
+            <>
+                <AreaCard handleClickopenDialog={handleClickopenDialog} key={c.id} clue={c}/>
+                <AlertDialog clue={c} openDialog={openDialog} handleClose={handleClose} />
+            </>
+        )
+        :
+        <div>لطفا یک جرم را انتخاب کنید</div>
+        }
     </div>
   )
 }

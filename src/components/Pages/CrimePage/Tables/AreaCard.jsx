@@ -5,10 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-export default function AreaCard({clue}) {
+export default function AreaCard({clue, handleClickopenDialog}) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
+      <CardActionArea onClick={handleClickopenDialog} >
         <CardMedia
           component="img"
           height="140"

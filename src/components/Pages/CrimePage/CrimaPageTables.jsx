@@ -52,7 +52,8 @@ export default function CrimaPageTables({value}) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Clues 
-          crimeID = {selected}
+          selected = {selected}
+          setSelected = {setSelected}
           setClues = {setClues}
           clues = {clues}
         />
