@@ -28,7 +28,7 @@ export default function SelectTabs({value, handleChange}) {
         sx={{ borderRight: 1, borderColor: 'divider', width:"100%" }}
       >
         <Tab label="جدول جرائم" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
+        <Tab label="مدارک محل جرم" {...a11yProps(1)} />
         <Tab label="Item Three" {...a11yProps(2)} />
         <Tab label="Item Four" {...a11yProps(3)} />
         <Tab label="Item Five" {...a11yProps(4)} />
