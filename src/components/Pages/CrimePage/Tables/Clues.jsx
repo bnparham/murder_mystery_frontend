@@ -18,15 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Clues({selected, setClues, clues}) {
 
-    const [openDialog, setOpenDialog] = React.useState(false);
 
-    const handleClickopenDialog = () => {
-        setOpenDialog(true);
-      };
-    
-      const handleClose = () => {
-        setOpenDialog(false);
-      };
 
   return (
     <div>
@@ -36,8 +28,7 @@ export default function Clues({selected, setClues, clues}) {
             {clues.map(
               c => 
               <Grid xs={12} md={4}>
-                  <AreaCard handleClickopenDialog={handleClickopenDialog} key={c.id} clue={c}/>
-                  <AlertDialog clue={c} openDialog={openDialog} handleClose={handleClose} />
+                  <AreaCard key={c.id} clue={c}/>
               </Grid>
             )}
         </Grid>

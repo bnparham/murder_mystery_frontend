@@ -4,8 +4,20 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import AlertDialog from './AlertDialog';
 
-export default function AreaCard({clue, handleClickopenDialog}) {
+export default function AreaCard({clue}) {
+
+  const [openDialog, setOpenDialog] = React.useState(false);
+
+  const handleClickopenDialog = () => {
+      setOpenDialog(true);
+    };
+  
+    const handleClose = () => {
+      setOpenDialog(false);
+    };
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea onClick={handleClickopenDialog} >
@@ -24,6 +36,7 @@ export default function AreaCard({clue, handleClickopenDialog}) {
           </Typography>
         </CardContent>
       </CardActionArea>
+      <AlertDialog clue={clue} openDialog={openDialog} handleClose={handleClose} />
     </Card>
   );
 }
