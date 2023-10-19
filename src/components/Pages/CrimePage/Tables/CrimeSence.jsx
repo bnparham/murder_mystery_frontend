@@ -334,7 +334,7 @@ export default function CrimeSence({crimes, setCrimes, streetSearch}) {
                     </TableCell>
                     <TableCell align="right">{row.description}</TableCell>
                     <TableCell align="right">{row.date}</TableCell>
-                    <TableCell align="right">{row.location_id}</TableCell>
+                    <TableCell align="right">{row.location_id.name}</TableCell>
                   </TableRow>
                 );
               })}
