@@ -32,7 +32,7 @@ export default function AreaCard({clue}) {
             {clue.item_id.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {clue.description}
+            {clue.short_desc}
           </Typography>
         </CardContent>
       </CardActionArea>
