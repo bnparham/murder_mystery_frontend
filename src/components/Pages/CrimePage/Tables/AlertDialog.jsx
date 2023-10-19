@@ -20,7 +20,7 @@ export default function AlertDialog({openDialog, handleClose, clue}) {
           {clue.item_id.name}
         </DialogTitle>
         <DialogContent>
-          <img src={`${clue.item_id.image}`} height={350} alt='1'/>
+          <img src={`${clue.item_id.image}`} height={350} width={350} alt={`${clue.item_id.name}`}/>
           <DialogContentText sx={{textAlign:'center'}} id="alert-dialog-description">
             {clue.description}
           </DialogContentText>
