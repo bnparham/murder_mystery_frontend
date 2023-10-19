@@ -2,6 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import CrimeSence from './Tables/CrimeSence';
+import SearchInput from './Tables/SearchInput';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -30,10 +32,14 @@ function TabPanel(props) {
   };
   
 export default function CrimaPageTables({value}) {
+  const [streetSearch, setStreetSearch] = React.useState('')
+  const [crimes, setCrimes] = React.useState([])
+
   return (
     <>
       <TabPanel value={value} index={0}>
-        Item One
+        <CrimeSence crimes={crimes}  setCrimes={setCrimes}/>
+        <SearchInput setStreetSearch={setStreetSearch} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

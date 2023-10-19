@@ -27,7 +27,7 @@ export default function SelectTabs({value, handleChange}) {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider', width:"100%" }}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
+        <Tab label="جدول جرائم" {...a11yProps(0)} />
         <Tab label="Item Two" {...a11yProps(1)} />
         <Tab label="Item Three" {...a11yProps(2)} />
         <Tab label="Item Four" {...a11yProps(3)} />
