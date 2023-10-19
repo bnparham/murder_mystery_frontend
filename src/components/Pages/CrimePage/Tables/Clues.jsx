@@ -3,7 +3,7 @@ import AreaCard from './AreaCard'
 import AlertDialog from './AlertDialog';
 
 
-export default function Clues({selected,setSelected, setClues, clues}) {
+export default function Clues({selected, setClues, clues}) {
 
     const [openDialog, setOpenDialog] = React.useState(false);
 
@@ -14,26 +14,6 @@ export default function Clues({selected,setSelected, setClues, clues}) {
       const handleClose = () => {
         setOpenDialog(false);
       };
-
-    useEffect(
-        function(){
-            async function fetchClueData () {
-                fetch(`http://127.0.0.1:8000/api/clue/?search=${selected}`)
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
-                    setClues(data)
-                })
-        }
-        fetchClueData()
-        }
-        ,[selected, setClues]
-    )
-
-    useEffect(
-        ()=>{console.log(clues)}, [clues]
-    )
 
   return (
     <div>

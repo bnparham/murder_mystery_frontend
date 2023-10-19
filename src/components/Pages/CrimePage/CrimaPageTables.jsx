@@ -47,6 +47,7 @@ export default function CrimaPageTables({value}) {
           streetSearch={streetSearch}
           selected = {selected}
           setSelected = {setSelected}
+          setClues = {setClues}
         />
         <SearchInput setStreetSearch={setStreetSearch} />
       </TabPanel>

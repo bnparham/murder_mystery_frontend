@@ -195,7 +195,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function CrimeSence({crimes, setCrimes, streetSearch, selected, setSelected}) {
+export default function CrimeSence({crimes, setCrimes, streetSearch, selected, setSelected, setClues}) {
 
     useEffect(
         function(){
@@ -211,6 +211,22 @@ export default function CrimeSence({crimes, setCrimes, streetSearch, selected, s
         fetchUserData()
         },[streetSearch, setCrimes])
       
+
+        useEffect(
+          function(){
+              async function fetchClueData () {
+                  fetch(`http://127.0.0.1:8000/api/clue/?search=${selected}`)
+                  .then(response => {
+                      return response.json()
+                  })
+                  .then(data => {
+                      setClues(data)
+                  })
+          }
+          fetchClueData()
+          }
+          ,[selected, setClues]
+      )
 
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
