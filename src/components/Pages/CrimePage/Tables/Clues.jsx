@@ -28,19 +28,23 @@ export default function Clues({selected,setSelected, setClues, clues}) {
         }
         fetchClueData()
         }
-        ,[selected, setClues, setSelected]
+        ,[selected, setClues]
+    )
+
+    useEffect(
+        ()=>{console.log(clues)}, [clues]
     )
 
   return (
     <div>
         {selected.length === 1
-        ? clues.map(
+        ? clues.length !== 0 ? (clues.map(
             c => 
             <>
                 <AreaCard handleClickopenDialog={handleClickopenDialog} key={c.id} clue={c}/>
                 <AlertDialog clue={c} openDialog={openDialog} handleClose={handleClose} />
             </>
-        )
+        )) : <div>مدرکی برای این جرم ثبت نشده است</div>
         :
         <div>لطفا یک جرم را انتخاب کنید</div>
         }
