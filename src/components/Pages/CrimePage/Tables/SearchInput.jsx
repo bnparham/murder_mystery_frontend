@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function SearchInput({setStreetSearch}) {
+export default function SearchInput({setStreetSearch, streetSearch}) {
   return (
     <Box
       component="form"
@@ -20,6 +20,7 @@ export default function SearchInput({setStreetSearch}) {
           variant="standard"
           color="secondary"
           onChange={(e) => setStreetSearch(e.target.value)}
+          value={streetSearch}
         />
       </div>
     </Box>

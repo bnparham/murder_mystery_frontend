@@ -37,6 +37,7 @@ export default function CrimaPageTables({value}) {
   const [crimes, setCrimes] = React.useState([])
   const [selected, setSelected] = React.useState([]);
   const [clues, setClues] = React.useState([]);
+  const [page, setPage] = React.useState(0);
 
   return (
     <>
@@ -48,8 +49,10 @@ export default function CrimaPageTables({value}) {
           selected = {selected}
           setSelected = {setSelected}
           setClues = {setClues}
+          page = {page}
+          setPage = {setPage}
         />
-        <SearchInput setStreetSearch={setStreetSearch} />
+        <SearchInput streetSearch={streetSearch} setStreetSearch={setStreetSearch} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Clues 
