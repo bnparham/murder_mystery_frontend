@@ -7,8 +7,12 @@ import SelectTabs from './SelectTabs';
 import CrimePageColContainer from './CrimePageColContainer';
 import CrimaPageTables from './CrimaPageTables';
 
+import enigmaBG from '../../../img/enigmaBG.jpg'
+import tableBG from '../../../img/tableBG.jpg'
+import whiteBG from '../../../img/whiteBG.jpg'
+
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: 'transparent',
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
@@ -27,7 +31,17 @@ export default function CrimePageMain() {
   return (
     <Grid container spacing={2}>
       <Grid xs={10}>
-        <Item>
+        <Item sx={{
+          backgroundImage:
+           value === 0 ? `url(${whiteBG})`
+           :
+           value === 1 ? `url(${tableBG})`
+           :
+           value === 2 ? `url(${enigmaBG})`
+           :
+           ''
+          , backgroundSize:'cover' 
+          }}>
           <CrimePageColContainer>
             <CrimaPageTables value={value} />
           </CrimePageColContainer>

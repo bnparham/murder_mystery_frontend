@@ -6,6 +6,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { TextField, Typography } from '@mui/material';
 import CipherKeyInput from './CipherKeyInput';
 
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
   ...theme.typography.body2,
@@ -58,15 +59,21 @@ export default function Encryption() {
       <Grid container spacing={2}>
         <Grid xs={12} sx={{border:'none'}}>
           <Item sx={{border:'none'}}>
+            <Box sx={{backgroundColor:'#22c99480',borderRadius:'32px 32px 0 0', p:2}}>
+                <Typography color={'#fff'} fontSize={20}>
+                : متن رمز گشایی شده
+                </Typography>
+            </Box>
             <TextField 
                 fullWidth = {true}
-                disabled = {true}
+                disabled = {false}
                 multiline={true}
-                rows={5}
-                sx = {{backgroundColor:"#22c994"}}
-                value = {` : متن رمز گشایی شده  \n${caesarCipher(text, Number(keyValue))}`}
+                rows={4}
+                sx = {{backgroundColor:"#22c99480"}}
+                spellCheck={false}
+                value = {`${caesarCipher(text, Number(keyValue))}`}
                 inputProps={{
-                    style:{fontSize:22, lineHeight:1.6, padding:4}
+                    style:{fontSize:22, lineHeight:1.6, padding:4, color:'#fff'}
                 }}
                 variant="standard"
                 InputProps={{
@@ -77,18 +84,21 @@ export default function Encryption() {
         </Grid>
         <Grid xs={12}>
           <Item>
-          <Typography>
-             : متن را در قسمت زیر وارد کنید
-          </Typography>
+                <Box sx={{backgroundColor:'#c9a82280',borderRadius:'32px 32px 0 0', p:2}}>
+                <Typography color={'#fff'} fontSize={20}>
+                : متن را در قسمت زیر وارد کنید
+                </Typography>
+                </Box>
           <TextField 
                 fullWidth = {true}
                 multiline={true}
-                rows={5}
+                rows={4}
                 value={text}
-                sx = {{backgroundColor:"#c9a822"}}
+                spellCheck={false}
+                sx = {{backgroundColor:"#c9a82280"}}
                 onChange={(e)=>{setText(e.target.value)}}
                 inputProps={{
-                    style:{fontSize:22, lineHeight:1.6, padding:4}
+                    style:{fontSize:22, lineHeight:1.6, padding:4, color:'#fff'}
                 }}
                 variant="standard"
                 InputProps={{

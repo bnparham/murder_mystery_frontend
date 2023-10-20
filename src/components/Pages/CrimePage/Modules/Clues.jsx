@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AreaCard from './AreaCard'
 import AlertDialog from './AlertDialog';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -32,9 +32,18 @@ export default function Clues({selected, setClues, clues}) {
               </Grid>
             )}
         </Grid>
-        : <div>مدرکی برای این جرم ثبت نشده است</div>
+        : 
+        <Box sx={{backgroundColor:'#22c99480',borderRadius:'32px 32px 0 0', p:2}}>
+                <Typography color={'#fff'} fontSize={20}>
+                برای این جرم مدرکی ثبت نشده است 
+                </Typography>
+        </Box>
         :
-        <div>لطفا یک جرم را انتخاب کنید</div>
+        <Box sx={{backgroundColor:'#22c99480',borderRadius:'32px 32px 0 0', p:2}}>
+                <Typography color={'#fff'} fontSize={20}>
+                لطفا یک جرم را انتخاب کنید 
+                </Typography>
+        </Box>
         }
     </div>
   )

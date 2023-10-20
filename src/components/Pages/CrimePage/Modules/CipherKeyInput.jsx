@@ -120,6 +120,7 @@ export default function CipherKeyInput({setKeyValue}) {
           helperText="لطفا کلید دلخواه را انتخاب کنید"
           variant="standard"
           onChange={(e)=> setKeyValue(e.target.value) }
+          sx = {{backgroundColor:'#fff', borderRadius:'10px 100px / 120px 100px', p:1}}
         >
           {currencies.map((option) => (
             <MenuItem key={option.value} value={option.value}>
