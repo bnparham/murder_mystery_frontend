@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
-import { TextField } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import CipherKeyInput from './CipherKeyInput';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -77,6 +77,9 @@ export default function Encryption() {
         </Grid>
         <Grid xs={12}>
           <Item>
+          <Typography>
+             : متن را در قسمت زیر وارد کنید
+          </Typography>
           <TextField 
                 fullWidth = {true}
                 multiline={true}
