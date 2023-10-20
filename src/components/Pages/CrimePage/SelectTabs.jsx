@@ -29,7 +29,7 @@ export default function SelectTabs({value, handleChange}) {
       >
         <Tab label="جدول جرائم" {...a11yProps(0)} />
         <Tab label="مدارک محل جرم" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
+        <Tab label="رمز نگاری" {...a11yProps(2)} />
         <Tab label="Item Four" {...a11yProps(3)} />
         <Tab label="Item Five" {...a11yProps(4)} />
         <Tab label="Item Six" {...a11yProps(5)} />

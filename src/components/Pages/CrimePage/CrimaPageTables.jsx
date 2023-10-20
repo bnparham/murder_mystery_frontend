@@ -2,9 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import CrimeSence from './Tables/CrimeSence';
-import SearchInput from './Tables/SearchInput';
-import Clues from './Tables/Clues';
+import CrimeSence from './Modules/CrimeSence';
+import SearchInput from './Modules/SearchInput';
+import Clues from './Modules/Clues';
+import Encryption from './Modules/Encryption';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -63,7 +64,7 @@ export default function CrimaPageTables({value}) {
         />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Encryption/>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four
