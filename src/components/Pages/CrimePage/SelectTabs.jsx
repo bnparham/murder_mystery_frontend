@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
+import bg2 from '../../../img/bg2.jpg'
 
 function a11yProps(index) {
     return {
@@ -17,7 +18,7 @@ export default function SelectTabs({value, handleChange}) {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: '100%'}}
+      sx={{ flexGrow: 1,display: 'flex', height: '100%', backgroundImage:`url(${bg2})`, backgroundSize:'cover'}}
     >
       <Tabs
         orientation="vertical"
@@ -25,11 +26,18 @@ export default function SelectTabs({value, handleChange}) {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider', width:"100%" }}
+        textColor='secondary'
+        sx={{ 
+          borderRight: 1, borderColor: 'divider', width:"100%",
+          "& button:focus": { color: "#f30505" },
+          "& button:active": { color: "#f30505" },
+          
+          }}
+        TabIndicatorProps={{style: {backgroundColor: '#f30505'}}}
       >
-        <Tab label="جدول جرائم" {...a11yProps(0)} />
-        <Tab label="مدارک محل جرم" {...a11yProps(1)} />
-        <Tab label="رمز نگاری" {...a11yProps(2)} />
+        <Tab sx={{color:'#fff'}} label="جدول جرائم" {...a11yProps(0)} />
+        <Tab sx={{color:'#fff'}} label="مدارک محل جرم" {...a11yProps(1)} />
+        <Tab sx={{color:'#fff'}} label="رمز نگاری" {...a11yProps(2)} />
         <Tab label="Item Four" {...a11yProps(3)} />
         <Tab label="Item Five" {...a11yProps(4)} />
         <Tab label="Item Six" {...a11yProps(5)} />
