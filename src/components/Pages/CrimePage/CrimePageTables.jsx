@@ -33,7 +33,7 @@ function TabPanel(props) {
     value: PropTypes.number.isRequired,
   };
   
-export default function CrimaPageTables({value}) {
+export default function CrimePageTables({value}) {
   const [streetSearch, setStreetSearch] = React.useState('')
   const [crimes, setCrimes] = React.useState([])
   const [selected, setSelected] = React.useState([]);

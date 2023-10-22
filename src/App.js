@@ -11,8 +11,8 @@ export default function App() {
   return (
     <AppLayout>
       {/* <MenuPageMain/> */}
-      {/* <CrimePageMain/> */}
-      <CityPageMain />
+      <CrimePageMain/>
+      {/* <CityPageMain /> */}
     </AppLayout>
   )
 }

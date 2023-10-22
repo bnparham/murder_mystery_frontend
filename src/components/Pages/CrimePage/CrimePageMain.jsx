@@ -3,13 +3,13 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
-import SelectTabs from './SelectTabs';
 import CrimePageColContainer from './CrimePageColContainer';
-import CrimaPageTables from './CrimaPageTables';
 
 import enigmaBG from '../../../img/enigmaBG.jpg'
 import tableBG from '../../../img/tableBG.jpg'
 import whiteBG from '../../../img/whiteBG.jpg'
+import CrimePageSelectTabs from './CrimePageSelectTabs';
+import CrimePageTables from './CrimePageTables';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
@@ -43,14 +43,14 @@ export default function CrimePageMain() {
           , backgroundSize:'cover' 
           }}>
           <CrimePageColContainer>
-            <CrimaPageTables value={value} />
+            <CrimePageTables value={value} />
           </CrimePageColContainer>
         </Item>
       </Grid>
       <Grid xs={2}>
         <Item>
           <CrimePageColContainer>
-            <SelectTabs value={value} handleChange={handleChange}/>
+            <CrimePageSelectTabs value={value} handleChange={handleChange}/>
           </CrimePageColContainer>
         </Item>
       </Grid>

@@ -14,7 +14,7 @@ function a11yProps(index) {
     };
   }
 
-export default function SelectTabs({value, handleChange}) {
+export default function CrimePageSelectTabs({value, handleChange}) {
 
   return (
     <Box
