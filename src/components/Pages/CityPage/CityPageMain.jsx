@@ -37,9 +37,9 @@ export default function CityPageMain() {
           backgroundImage:
            value === 0 ? `url(${whiteBG})`
            :
-           value === 1 ? `url(${tableBG})`
+           value === 1 ? `url(${whiteBG})`
            :
-           value === 2 ? `url(${enigmaBG})`
+           value === 2 ? `url(${whiteBG})`
            :
            ''
           , backgroundSize:'cover' 

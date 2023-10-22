@@ -2,6 +2,9 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import SecurityCameras from './Modules/SecurityCameras';
+import SecuritySearchInput from './Modules/SecuritySearchInput';
+import SecurityRadioButton from './Modules/SecurityRadioButton';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -31,10 +34,26 @@ function TabPanel(props) {
   
 export default function CityPageTables({value}) {
 
+  const [securitySearch, setSecuritySearch] = React.useState('')
+  const [securityData, setSecurityData] = React.useState([])
+  const [radio, setRadio] = React.useState('')
+
   return (
     <>
       <TabPanel value={value} index={0}>
-        1
+        <SecurityCameras 
+          securitySearch={securitySearch} 
+          securityData={securityData} 
+          setSecurityData={setSecurityData}
+          radio = {radio}
+          />
+        <SecuritySearchInput
+          securitySearch={securitySearch} 
+          setSecuritySearch={setSecuritySearch}
+          securityData={securityData} 
+          setSecurityData={setSecurityData}
+          setRadio = {setRadio}
+         />
       </TabPanel>
       <TabPanel value={value} index={1}>
         2
