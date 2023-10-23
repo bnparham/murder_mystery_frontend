@@ -6,26 +6,27 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 import securityCamera from '../../../../img/securityCamera.jpg'
+import securityCameraCard from '../../../../img/securityCameraCard.png'
 
 export default function SecurityCards({card}) {
 
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 345}}>
-      <CardActionArea onClick={() => (setIsOpen(e => !e))}>
+    <Card sx={{ maxWidth: 395}}>
+      <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
         {
           isOpen === true
           ?
           <>
           <CardMedia
             component="img"
-            height="140"
-            image={securityCamera}
+            height="270"
+            image={securityCameraCard}
             alt="green iguana"
           />
           <CardContent>
-            <Typography gutterBottom variant="h6" component="div">
+            <Typography gutterBottom variant="caption" component="div">
               خیابان : {card.street_id.name}
             </Typography>
             <Typography variant="subtitle2" color="text.secondary">

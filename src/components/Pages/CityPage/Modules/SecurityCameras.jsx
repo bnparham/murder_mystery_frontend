@@ -21,7 +21,7 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
         },[setSecurityData, securitySearch])
 
 
-        const itemsPerPage = 8; // Adjust the number of items per page as needed
+        const itemsPerPage = 6; // Adjust the number of items per page as needed
         const [currentPage, setCurrentPage] = useState(1);
         
         // Calculate the start and end index for the current page.
@@ -38,7 +38,7 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
             <Grid container spacing={1}>
                 {currentData.map(
                 c => 
-                <Grid xs={12} md={3} sx={{p:1}}>
+                <Grid xs={12} md={2} sx={{p:1}}>
                     <SecurityCards key={c.id} card={c}/>
                 </Grid>
                 )}
