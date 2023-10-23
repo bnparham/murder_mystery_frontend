@@ -9,10 +9,10 @@ import { CardActionArea } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TodayIcon from '@mui/icons-material/Today';
 
-import securityCamera from '../../../../img/securityCamera.jpg'
-import securityCameraCard from '../../../../img/securityCameraCard.png'
+import securityCamera from '../../../../../img/securityCamera.jpg'
+import securityCameraCard from '../../../../../img/securityCameraCard.png'
 
-import cameraBlackWhite from '../../../../img/cameraBlackWhite.png'
+import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
 
 export default function SecurityCards({card}) {
 

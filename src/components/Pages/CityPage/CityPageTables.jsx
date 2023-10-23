@@ -2,9 +2,9 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import SecurityCameras from './Modules/SecurityCameras';
-import SecuritySearchInput from './Modules/SecuritySearchInput';
-import SecurityRadioButton from './Modules/SecurityRadioButton';
+import SecurityCameras from './Modules/SecurityCamera/SecurityCameras';
+import SecuritySearchInput from './Modules/SecurityCamera/SecuritySearchInput';
+import SecurityRadioButton from './Modules/SecurityCamera/SecurityRadioButton';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

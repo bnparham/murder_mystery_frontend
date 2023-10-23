@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import SecurityCards from './SecurityCards';
 import { Grid } from '@mui/material';
-import CustomPagination from './CustomPagination';
+import CustomPagination from '../CustomPagination';
 
 export default function SecurityCameras({securitySearch, setSecurityData, securityData, radio}) {
 
