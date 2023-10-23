@@ -8,6 +8,8 @@ import { CardActionArea } from '@mui/material';
 import securityCamera from '../../../../img/securityCamera.jpg'
 import securityCameraCard from '../../../../img/securityCameraCard.png'
 
+import cameraBlackWhite from '../../../../img/cameraBlackWhite.png'
+
 export default function SecurityCards({card}) {
 
   const [isOpen, setIsOpen] = React.useState(true)
@@ -23,28 +25,37 @@ export default function SecurityCards({card}) {
             component="img"
             height="270"
             image={securityCameraCard}
-            alt="green iguana"
+            alt={`${card.license_plate.license_plate}`}
           />
           <CardContent>
-            <Typography gutterBottom variant="caption" component="div">
+            <Typography gutterBottom variant="subtitle2" component="div">
               خیابان : {card.street_id.name}
             </Typography>
-            <Typography variant="subtitle2" color="text.secondary">
+            <Typography variant="caption" color="text.secondary">
               فعالیت : {card.activity === 'exit' ? 'خروج' : 'ورود'}
             </Typography>
           </CardContent>
           </>
         :
         <>
-        <CardContent sx={{height:'202px', border:'3px solid #000'}}>
-            <Typography gutterBottom variant="h5" component="div">
+        <CardContent sx={{height:'312px', backgroundColor:'#071636'}}>
+        <CardMedia
+            component="img"
+            height="100"
+            image={cameraBlackWhite}
+            alt={`${card.license_plate.license_plate}`}
+          />
+            <Typography sx={{margin:'10px 0'}} color={'#fff'} gutterBottom variant="h5" component="div">
               : شماره پلاک 
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography color={'#fff'} gutterBottom variant="h5" component="div">
               {card.license_plate.license_plate}
             </Typography>
-            <Typography variant="subtitle2" color="text.secondary">
-              تاریخ  : {card.date} | زمان :  {card.time}
+            <Typography color={'#fff'} variant="subtitle2">
+              تاریخ  : {card.date}
+            </Typography>
+            <Typography color={'#fff'} variant="subtitle2">
+              زمان :  {card.time.split(':').slice(0,2).join(':')}
             </Typography>
           </CardContent>
         </>
