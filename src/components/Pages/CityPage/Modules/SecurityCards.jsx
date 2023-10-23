@@ -5,6 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
+// icons
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import TodayIcon from '@mui/icons-material/Today';
+
 import securityCamera from '../../../../img/securityCamera.jpg'
 import securityCameraCard from '../../../../img/securityCameraCard.png'
 
@@ -38,7 +42,7 @@ export default function SecurityCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'312px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'315px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"
@@ -51,12 +55,18 @@ export default function SecurityCards({card}) {
             <Typography color={'#fff'} gutterBottom variant="h5" component="div">
               {card.license_plate.license_plate}
             </Typography>
-            <Typography color={'#fff'} variant="subtitle2">
-              تاریخ  : {card.date}
-            </Typography>
-            <Typography color={'#fff'} variant="subtitle2">
-              زمان :  {card.time.split(':').slice(0,2).join(':')}
-            </Typography>
+            <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '5px 0'}}>
+              <Typography color={'#fff'} variant="subtitle2">
+                {card.date.split("-").join('/')}
+              <TodayIcon color={'#fff'} fontSize='small' sx={{padding:'0 5px'}}/>
+              </Typography>
+            </div>
+            <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center'}}>
+              <Typography color={'#fff'} variant="subtitle2">
+                {card.time.split(':').slice(0,2).join(':')}
+              </Typography>
+              <AccessTimeIcon fontSize='small' sx={{padding:'0 5px', color:'#fff'}}/>
+            </div>
           </CardContent>
         </>
         }
