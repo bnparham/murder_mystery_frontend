@@ -36,7 +36,7 @@ export default function CityPageSelectTabs({value, handleChange}) {
         TabIndicatorProps={{style: {backgroundColor: '#f30505'}}}
       >
         <Tab sx={{color:'#fff'}} label="دوربین های امنیتی" {...a11yProps(0)} />
-        <Tab sx={{color:'#fff'}} label="2" {...a11yProps(1)} />
+        <Tab sx={{color:'#fff'}} label="تلفن های همراه" {...a11yProps(1)} />
         <Tab sx={{color:'#fff'}} label="3" {...a11yProps(2)} />
         <Tab label="Item Four" {...a11yProps(3)} />
         <Tab label="Item Five" {...a11yProps(4)} />

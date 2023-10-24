@@ -4,7 +4,9 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import SecurityCameras from './Modules/SecurityCamera/SecurityCameras';
 import SecuritySearchInput from './Modules/SecurityCamera/SecuritySearchInput';
-import SecurityRadioButton from './Modules/SecurityCamera/SecurityRadioButton';
+import PhoneCalls from './Modules/PhoneCalls/PhoneCalls';
+
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -34,9 +36,13 @@ function TabPanel(props) {
   
 export default function CityPageTables({value}) {
 
+  // securityLogs Section
   const [securitySearch, setSecuritySearch] = React.useState('')
   const [securityData, setSecurityData] = React.useState([])
-  const [radio, setRadio] = React.useState('')
+  const [securityRadio, setSecurityRadio] = React.useState('')
+
+  // phoneCalls section
+  const [phoneData, setPhoneData] = React.useState([])
 
   return (
     <>
@@ -45,18 +51,21 @@ export default function CityPageTables({value}) {
           securitySearch={securitySearch} 
           securityData={securityData} 
           setSecurityData={setSecurityData}
-          radio = {radio}
+          securityRadio = {securityRadio}
           />
         <SecuritySearchInput
           securitySearch={securitySearch} 
           setSecuritySearch={setSecuritySearch}
           securityData={securityData} 
           setSecurityData={setSecurityData}
-          setRadio = {setRadio}
+          setSecurityRadio = {setSecurityRadio}
          />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        2
+        <PhoneCalls 
+          phoneData = {phoneData}
+          setPhoneData = {setPhoneData}
+        />
       </TabPanel>
       <TabPanel value={value} index={2}>
         3

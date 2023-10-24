@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SecurityRadioButton from './SecurityRadioButton';
 
-export default function SecuritySearchInput({setSecuritySearch, securitySearch, setRadio}) {
+export default function SecuritySearchInput({setSecuritySearch, securitySearch, setSecurityRadio}) {
 
   return (
     <Box
@@ -16,7 +16,7 @@ export default function SecuritySearchInput({setSecuritySearch, securitySearch, 
       noValidate
       autoComplete="off"
     >
-    <SecurityRadioButton setRadio={setRadio}/>
+    <SecurityRadioButton setSecurityRadio={setSecurityRadio}/>
       <div>
         <TextField
           id="standard-search"

@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react'
 
-import SecurityCards from './SecurityCards';
+
+
 import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
+import PhoneCards from './PhoneCards';
 
-export default function SecurityCameras({securitySearch, setSecurityData, securityData, securityRadio}) {
+export default function PhoneCalls({phoneData, setPhoneData}) {
 
     useEffect(
         function(){
             async function fetchUsersecurityData () {
-                fetch(`http://127.0.0.1:8000/api/security-log/?search=${securitySearch}`)
+                fetch(`http://127.0.0.1:8000/api/phone-calls`)
                 .then(response => {
                     return response.json()
                 })
                 .then(securityData => {
-                    setSecurityData(securityData)
+                    setPhoneData(securityData)
                 })
         }
         fetchUsersecurityData()
-        },[setSecurityData, securitySearch])
+        },[setPhoneData])
 
 
         const itemsPerPage = 6; // Adjust the number of items per page as needed
@@ -29,9 +31,7 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = securityData.slice(startIndex, endIndex).filter(
-          item =>  securityRadio !== '' ? item.activity === securityRadio : item
-        );
+        const currentData = phoneData.slice(startIndex, endIndex)
 
     return (
         <div>
@@ -39,11 +39,11 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
                 {currentData.map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
-                    <SecurityCards key={c.id} card={c}/>
+                    <PhoneCards key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(securityData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={Math.floor(phoneData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }

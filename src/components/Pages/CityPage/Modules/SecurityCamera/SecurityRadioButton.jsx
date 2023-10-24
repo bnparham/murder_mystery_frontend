@@ -5,7 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-export default function SecurityRadioButton({setRadio}) {
+export default function SecurityRadioButton({setSecurityRadio}) {
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">فیلتر بر اساس فعالیت</FormLabel>
@@ -14,7 +14,7 @@ export default function SecurityRadioButton({setRadio}) {
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="all"
         name="radio-buttons-group"
-        onChange={(e) => setRadio(e.target.value)}
+        onChange={(e) => setSecurityRadio(e.target.value)}
       >
         <FormControlLabel value="" control={<Radio />} label="نمایش همه" />
         <FormControlLabel value="exit" control={<Radio />} label="خروج" />
