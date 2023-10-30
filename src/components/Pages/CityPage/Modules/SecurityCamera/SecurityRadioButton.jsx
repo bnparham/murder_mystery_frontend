@@ -6,13 +6,15 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
 export default function SecurityRadioButton({setSecurityRadio}) {
+
+
   return (
     <FormControl>
       <FormLabel id="demo-radio-buttons-group-label">فیلتر بر اساس فعالیت</FormLabel>
       <RadioGroup
         row
         aria-labelledby="demo-radio-buttons-group-label"
-        defaultValue="all"
+        defaultValue=""
         name="radio-buttons-group"
         onChange={(e) => setSecurityRadio(e.target.value)}
       >
