@@ -46,7 +46,7 @@ export default function CityPageTables({value}) {
   const [phoneData, setPhoneData] = React.useState([])
 
   // interView section
-  const [interviewData, setInterviewData] = React.useState('')
+  const [interviewData, setInterviewData] = React.useState([])
 
   return (
     <>

@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
-
-
 import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 
@@ -9,8 +6,8 @@ export default function InterViews({interviewData, setInterviewData}) {
 
     useEffect(
         function(){
-            async function fetchUsersecurityData () {
-                fetch(`http://127.0.0.1:8000/api/interviews/`)
+            async function fetchInterViewData () {
+                fetch(`http://127.0.0.1:8000/api/interviews`)
                 .then(response => {
                     return response.json()
                 })
@@ -18,7 +15,7 @@ export default function InterViews({interviewData, setInterviewData}) {
                     setInterviewData(interviewData)
                 })
         }
-        fetchUsersecurityData()
+        fetchInterViewData()
         },[setInterviewData])
 
         
@@ -39,7 +36,9 @@ export default function InterViews({interviewData, setInterviewData}) {
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
                     {/* <PhoneCards key={c.id} card={c}/> */}
-                    {c.name} - {c.transcript} - {c.date}
+                    <div key={c.id}>
+                        {c.name} - {c.transcript} - {c.date}
+                    </div>
                 </Grid>
                 )}
             </Grid>
