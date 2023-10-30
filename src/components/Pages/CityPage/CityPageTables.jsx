@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import SecurityCameras from './Modules/SecurityCamera/SecurityCameras';
 import SecuritySearchInput from './Modules/SecurityCamera/SecuritySearchInput';
 import PhoneCalls from './Modules/PhoneCalls/PhoneCalls';
+import InterViews from './Modules/InterViews/InterViews';
 
 
 
@@ -40,9 +41,12 @@ export default function CityPageTables({value}) {
   const [securitySearch, setSecuritySearch] = React.useState('')
   const [securityData, setSecurityData] = React.useState([])
   const [securityRadio, setSecurityRadio] = React.useState('')
-
+  
   // phoneCalls section
   const [phoneData, setPhoneData] = React.useState([])
+
+  // interView section
+  const [interviewData, setInterviewData] = React.useState('')
 
   return (
     <>
@@ -68,7 +72,10 @@ export default function CityPageTables({value}) {
         />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        3
+        <InterViews
+          interviewData = {interviewData}
+          setInterviewData = {setInterviewData}
+        />
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four
