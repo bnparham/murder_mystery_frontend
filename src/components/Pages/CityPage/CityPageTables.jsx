@@ -8,6 +8,8 @@ import PhoneCalls from './Modules/PhoneCalls/PhoneCalls';
 import InterViews from './Modules/InterViews/InterViews';
 import BankAccount from './Modules/Bank Account/BankAccount';
 import Atm from './Modules/Atm/Atm';
+import Airport from './Modules/Airports/Airport';
+import Flight from './Modules/Flights/Flight';
 
 
 
@@ -56,6 +58,12 @@ export default function CityPageTables({value}) {
   // atm section
   const [atmData, setAtmData] = React.useState([])
 
+  // airport section
+  const [airportData, setAirportData] = React.useState([])
+
+  // flight section
+  const [flightData, setFlightData] = React.useState([])
+
 
   return (
     <>
@@ -99,10 +107,19 @@ export default function CityPageTables({value}) {
         />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Six
+        <Airport
+          airportData = {airportData}
+          setAirportData = {setAirportData}
+        />
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Item Seven
+        <Flight
+          flightData = {flightData}
+          setFlightData = {setFlightData}
+        />
+      </TabPanel>
+      <TabPanel value={value} index={7}>
+        Item eight
       </TabPanel>
     </>
   )
