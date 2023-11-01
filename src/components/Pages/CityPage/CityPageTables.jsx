@@ -7,6 +7,7 @@ import SecuritySearchInput from './Modules/SecurityCamera/SecuritySearchInput';
 import PhoneCalls from './Modules/PhoneCalls/PhoneCalls';
 import InterViews from './Modules/InterViews/InterViews';
 import BankAccount from './Modules/Bank Account/BankAccount';
+import Atm from './Modules/Atm/Atm';
 
 
 
@@ -52,6 +53,10 @@ export default function CityPageTables({value}) {
   // bank section
   const [bankData, setBankData] = React.useState([])
 
+  // atm section
+  const [atmData, setAtmData] = React.useState([])
+
+
   return (
     <>
       <TabPanel value={value} index={0}>
@@ -88,7 +93,10 @@ export default function CityPageTables({value}) {
         />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+        <Atm
+          atmData = {atmData}
+          setAtmData = {setAtmData}
+        />
       </TabPanel>
       <TabPanel value={value} index={5}>
         Item Six
