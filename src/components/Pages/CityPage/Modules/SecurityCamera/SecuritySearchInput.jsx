@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SecurityRadioButton from './SecurityRadioButton';
 
-export default function SecuritySearchInput({setSecuritySearch, securitySearch, setSecurityRadio}) {
+export default function SecuritySearchInput({setSecuritySearch, securitySearch, setSecurityRadio, setSecuritySearchDate, securitySearchDate}) {
 
   return (
     <Box
@@ -26,6 +26,14 @@ export default function SecuritySearchInput({setSecuritySearch, securitySearch, 
           color="secondary"
           onChange={(e) => setSecuritySearch(e.target.value)}
           value={securitySearch}
+        />
+        <TextField
+          id="standard-search"
+          type="date"
+          variant="outlined"
+          color="secondary"
+          onChange={(e) => setSecuritySearchDate(e.target.value)}
+          value={securitySearchDate}
         />
       </div>
       

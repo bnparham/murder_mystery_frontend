@@ -48,7 +48,8 @@ export default function CityPageTables({value}) {
   const [securitySearch, setSecuritySearch] = React.useState('')
   const [securityData, setSecurityData] = React.useState([])
   const [securityRadio, setSecurityRadio] = React.useState('')
-  
+  const [securitySearchDate, setSecuritySearchDate] = React.useState('')
+
   // phoneCalls section
   const [phoneData, setPhoneData] = React.useState([])
 
@@ -82,6 +83,7 @@ export default function CityPageTables({value}) {
           securityData={securityData} 
           setSecurityData={setSecurityData}
           securityRadio = {securityRadio}
+          securitySearchDate = {securitySearchDate}
           />
         <SecuritySearchInput
           securitySearch={securitySearch} 
@@ -89,6 +91,8 @@ export default function CityPageTables({value}) {
           securityData={securityData} 
           setSecurityData={setSecurityData}
           setSecurityRadio = {setSecurityRadio}
+          securitySearchDate = {securitySearchDate}
+          setSecuritySearchDate = {setSecuritySearchDate}
          />
       </TabPanel>
       <TabPanel value={value} index={1}>

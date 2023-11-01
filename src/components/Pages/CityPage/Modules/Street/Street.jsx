@@ -40,10 +40,15 @@ export default function Street({streetData, setStreetData, locationSearch}) {
                         streetData.filter(
                         obj => locationSearch !== '' ? obj.location_id.name.includes(locationSearch) : obj)
                     )
-                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage) + 1 : Math.floor(currentData.length/itemsPerPage))
-            }, [locationSearch, streetData, currentData]
+            }, [locationSearch, streetData]
         )
 
+        useEffect(
+            () => {
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+                }, 
+        [currentData]
+        )
 
     return (
         <div>

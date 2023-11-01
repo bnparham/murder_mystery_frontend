@@ -4,7 +4,7 @@ import SecurityCards from './SecurityCards';
 import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 
-export default function SecurityCameras({securitySearch, setSecurityData, securityData, securityRadio}) {
+export default function SecurityCameras({securitySearch, setSecurityData, securityData, securityRadio, securitySearchDate}) {
 
     useEffect(
         function(){
@@ -28,22 +28,38 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         
-        // Get the data to display on the current page.
-        const currentData = securityData.slice(startIndex, endIndex).filter(
-          item =>  securityRadio !== '' ? item.activity === securityRadio : item
-        );
+        const [currentData, setCurrentData] = React.useState(securityData)
+
+        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+
+        useEffect(
+            function () { 
+                setCurrentData(securityData.filter(
+                    item => securityRadio !== '' ? item.activity === securityRadio : item
+                ).filter(obj => securitySearchDate !== '' ? new Date(obj.date) >= new Date(securitySearchDate) : obj)
+                )
+             },
+            [securitySearch, securityData, securityRadio, securitySearchDate]
+        )
+             
+        useEffect(
+            () => {
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+                }, 
+        [currentData]
+        )
 
     return (
         <div>
             <Grid container spacing={1}>
-                {currentData.map(
+                {currentData.slice(startIndex, endIndex).map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
                     <SecurityCards key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(securityData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={countPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }
