@@ -42,7 +42,9 @@ export default function CityPageSelectTabs({value, handleChange}) {
         <Tab sx={{color:'#fff'}} label="(ATM) درگاه های پرداخت بانکی" {...a11yProps(4)} />
         <Tab sx={{color:'#fff'}} label="فرودگاه ها" {...a11yProps(5)} />
         <Tab sx={{color:'#fff'}} label="پرواز ها" {...a11yProps(6)} />
-        <Tab sx={{color:'#fff'}} label="Item 8" {...a11yProps(7)} />
+        <Tab sx={{color:'#fff'}} label="لیست مسافران" {...a11yProps(7)} />
+        <Tab sx={{color:'#fff'}} label="شهر ها" {...a11yProps(8)} />
+        <Tab sx={{color:'#fff'}} label="خیابان ها" {...a11yProps(9)} />
       </Tabs>
     </Box>
   );
