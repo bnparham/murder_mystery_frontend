@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
-import LocationCard from './StreetCard';
+import StreetCard from './StreetCard';
 
 
-export default function Street({streetData, setStreetData}) {
+export default function Street({streetData, setStreetData, locationSearch}) {
 
     useEffect(
         function(){
@@ -29,19 +29,33 @@ export default function Street({streetData, setStreetData}) {
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = streetData.slice(startIndex, endIndex)
+        
+        const [currentData, setcurrentData] = React.useState(streetData)
+
+        const [countPage, setCountPage] = React.useState(Math.floor(currentData.length/itemsPerPage) + 1)
+
+        useEffect(
+            function(){
+                setcurrentData(
+                        streetData.filter(
+                        obj => locationSearch !== '' ? obj.location_id.name.includes(locationSearch) : obj)
+                    )
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage) + 1 : Math.floor(currentData.length/itemsPerPage))
+            }, [locationSearch, streetData, currentData]
+        )
+
 
     return (
         <div>
             <Grid container spacing={1}>
-                {currentData.map(
+                {currentData.slice(startIndex, endIndex).map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
-                    <LocationCard key={c.id} card={c}/>
+                    <StreetCard key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(streetData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={countPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }
