@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
-import LocationCard from './LocationCard';
+import LocationCard from './StreetCard';
 
 
-export default function Location({locationData, setLocationData}) {
+export default function Street({streetData, setStreetData}) {
 
     useEffect(
         function(){
-            async function fetchLocationData () {
-                fetch(`http://127.0.0.1:8000/api/location/`)
+            async function fetchStreetData () {
+                fetch(`http://127.0.0.1:8000/api/street/`)
                 .then(response => {
                     return response.json()
                 })
-                .then(locationData => {
-                    setLocationData(locationData)
+                .then(streetData => {
+                    setStreetData(streetData)
                 })
         }
-        fetchLocationData()
-        },[setLocationData])
+        fetchStreetData()
+        },[setStreetData])
 
         
         const itemsPerPage = 6; // Adjust the number of items per page as needed
@@ -29,7 +29,7 @@ export default function Location({locationData, setLocationData}) {
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = locationData.slice(startIndex, endIndex)
+        const currentData = streetData.slice(startIndex, endIndex)
 
     return (
         <div>
@@ -41,7 +41,7 @@ export default function Location({locationData, setLocationData}) {
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(locationData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={Math.floor(streetData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }
