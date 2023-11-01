@@ -38,10 +38,10 @@ export default function CityPageSelectTabs({value, handleChange}) {
         <Tab sx={{color:'#fff'}} label="دوربین های امنیتی" {...a11yProps(0)} />
         <Tab sx={{color:'#fff'}} label="تلفن های همراه" {...a11yProps(1)} />
         <Tab sx={{color:'#fff'}} label="مصاحبه ها" {...a11yProps(2)} />
-        <Tab label="حساب های بانکی" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab sx={{color:'#fff'}} label="حساب های بانکی" {...a11yProps(3)} />
+        <Tab sx={{color:'#fff'}} label="Item Five" {...a11yProps(4)} />
+        <Tab sx={{color:'#fff'}} label="Item Six" {...a11yProps(5)} />
+        <Tab sx={{color:'#fff'}} label="Item Seven" {...a11yProps(6)} />
       </Tabs>
     </Box>
   );
