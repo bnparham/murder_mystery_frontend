@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
-import InterViewCards from './InterViewCards'
+import BankAccountCard from './BankAccountCard'
 
-export default function InterViews({interviewData, setInterviewData}) {
+export default function BankAccount({bankData, setBankData}) {
 
     useEffect(
         function(){
             async function fetchInterViewData () {
-                fetch(`http://127.0.0.1:8000/api/interviews`)
+                fetch(`http://127.0.0.1:8000/api/bank-account/`)
                 .then(response => {
                     return response.json()
                 })
-                .then(interviewData => {
-                    setInterviewData(interviewData)
+                .then(bankData => {
+                    setBankData(bankData)
                 })
         }
         fetchInterViewData()
-        },[setInterviewData])
+        },[setBankData])
 
         
         const itemsPerPage = 6; // Adjust the number of items per page as needed
@@ -28,7 +28,7 @@ export default function InterViews({interviewData, setInterviewData}) {
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = interviewData.slice(startIndex, endIndex)
+        const currentData = bankData.slice(startIndex, endIndex)
 
     return (
         <div>
@@ -36,11 +36,11 @@ export default function InterViews({interviewData, setInterviewData}) {
                 {currentData.map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
-                    <InterViewCards key={c.id} card={c}/>
+                    <BankAccountCard key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(interviewData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={Math.floor(bankData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }

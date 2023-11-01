@@ -6,6 +6,7 @@ import SecurityCameras from './Modules/SecurityCamera/SecurityCameras';
 import SecuritySearchInput from './Modules/SecurityCamera/SecuritySearchInput';
 import PhoneCalls from './Modules/PhoneCalls/PhoneCalls';
 import InterViews from './Modules/InterViews/InterViews';
+import BankAccount from './Modules/Bank Account/BankAccount';
 
 
 
@@ -48,6 +49,9 @@ export default function CityPageTables({value}) {
   // interView section
   const [interviewData, setInterviewData] = React.useState([])
 
+  // bank section
+  const [bankData, setBankData] = React.useState([])
+
   return (
     <>
       <TabPanel value={value} index={0}>
@@ -78,7 +82,10 @@ export default function CityPageTables({value}) {
         />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+        <BankAccount
+          bankData = {bankData}
+          setBankData = {setBankData}
+        />
       </TabPanel>
       <TabPanel value={value} index={4}>
         Item Five

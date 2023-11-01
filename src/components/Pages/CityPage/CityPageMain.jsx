@@ -41,6 +41,12 @@ export default function CityPageMain() {
            :
            value === 2 ? `url(${whiteBG})`
            :
+           value === 3 ? `url(${whiteBG})`
+           :
+           value === 4 ? `url(${whiteBG})`
+           :
+           value === 5 ? `url(${whiteBG})`
+           :
            ''
           , backgroundSize:'cover' 
           }}>

@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function InterViewCards() {
+export default function InterViewCards({card}) {
   return (
-    <div>InterViewCards</div>
+    <div >
+      {card.name} - {card.transcript} - {card.date}
+    </div>
   )
 }
