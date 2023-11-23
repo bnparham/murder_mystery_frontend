@@ -14,6 +14,18 @@ import Passenger from './Modules/Passengers/Passenger';
 import Street from './Modules/Street/Street';
 import LocationSearchInput from './Modules/Street/LocationtSearchInput';
 
+// img address
+import interviewCardImg from '../../../img/interviewCardImg.png'
+import ATMCardImg from '../../../img/ATMCardImg.png'
+import phoneCallsCardImg from '../../../img/phoneCallsCard.png'
+import securityCameraCardImg from '../../../img/securityCameraCard.png'
+
+export const imgs = {
+  'interviewCardImg' : interviewCardImg,
+  'ATMCardImg': ATMCardImg,
+  'phoneCallsCardImg' : phoneCallsCardImg,
+  'securityCameraCardImg' : securityCameraCardImg,
+}
 
 
 function TabPanel(props) {

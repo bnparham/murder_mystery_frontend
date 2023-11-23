@@ -1,9 +1,11 @@
 import React from 'react'
-import interviewCardImg from '../../../../../img/interviewCardImg.png'
+// import interviewCardImg from '../../../../../img/interviewCardImg.png'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
 import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
 import TodayIcon from '@mui/icons-material/Today';
 
+// load imgs
+import {imgs} from '../../CityPageTables'
 
 export default function InterViewCards({card}) {
 
@@ -19,7 +21,7 @@ export default function InterViewCards({card}) {
           <CardMedia
             component="img"
             height="270"
-            image={interviewCardImg}
+            image={imgs.interviewCardImg}
             alt={`${card.name}-${card.date}`}
           />
           <CardContent>

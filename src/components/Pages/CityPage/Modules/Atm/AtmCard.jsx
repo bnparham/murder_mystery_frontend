@@ -1,9 +1,11 @@
 import React from 'react'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import ATMCardImg from '../../../../../img/ATMCardImg.png'
 import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
 import TodayIcon from '@mui/icons-material/Today';
 
+
+// load imgs
+import {imgs} from '../../CityPageTables'
 
 export default function AtmCard({card}) {
 
@@ -19,12 +21,15 @@ export default function AtmCard({card}) {
           <CardMedia
             component="img"
             height="270"
-            image={ATMCardImg}
+            image={imgs.ATMCardImg}
             alt={`${card.atm_location.name}`}
           />
           <CardContent>
             <Typography gutterBottom variant="subtitle2" component="div">
               لوکیشن : {card.atm_location.name}
+            </Typography>
+            <Typography gutterBottom variant="caption" component="div" color="text.secondary"> 
+                عملیات : {card.transaction_type}
             </Typography>
           </CardContent>
           </>
@@ -52,7 +57,7 @@ export default function AtmCard({card}) {
 
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '5px 0'}}>
               <Typography gutterBottom variant="subtitle2" component="div" color={'#fff'}> 
-                مبلغ : {card.transaction_type}
+                شماره حساب : {card.account_number.account_number}
               </Typography>
             </div>
 

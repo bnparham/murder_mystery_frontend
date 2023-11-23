@@ -9,9 +9,12 @@ import { CardActionArea } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TodayIcon from '@mui/icons-material/Today';
 
-import securityCameraCard from '../../../../../img/securityCameraCard.png'
+
 
 import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
+
+// load imgs
+import {imgs} from '../../CityPageTables'
 
 export default function SecurityCards({card}) {
 
@@ -27,7 +30,7 @@ export default function SecurityCards({card}) {
           <CardMedia
             component="img"
             height="270"
-            image={securityCameraCard}
+            image={imgs.securityCameraCardImg}
             alt={`${card.license_plate.license_plate}`}
           />
           <CardContent>

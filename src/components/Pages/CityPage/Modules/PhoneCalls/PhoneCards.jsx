@@ -5,13 +5,17 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-import phoneCallsCard from '../../../../../img/phoneCallsCard.png'
+
 
 // icons
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TodayIcon from '@mui/icons-material/Today';
 
 import phoneDark from '../../../../../img/phoneDark.png'
+
+
+// load imgs
+import {imgs} from '../../CityPageTables'
 
 export default function PhoneCards({card}) {
 
@@ -27,7 +31,7 @@ export default function PhoneCards({card}) {
           <CardMedia
             component="img"
             height="270"
-            image={phoneCallsCard}
+            image={imgs.phoneCallsCardImg}
             alt={`${card.caller.phone_number}`}
           />
           <CardContent>
