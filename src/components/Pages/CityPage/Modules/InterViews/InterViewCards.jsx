@@ -20,7 +20,7 @@ export default function InterViewCards({card}) {
             component="img"
             height="270"
             image={interviewCardImg}
-            alt={`${card.name}-${card.date}}`}
+            alt={`${card.name}-${card.date}`}
           />
           <CardContent>
             <Typography gutterBottom variant="subtitle2" component="div">
@@ -38,7 +38,7 @@ export default function InterViewCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'315px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'327px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"
