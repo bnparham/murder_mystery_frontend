@@ -19,12 +19,16 @@ import interviewCardImg from '../../../img/interviewCardImg.png'
 import ATMCardImg from '../../../img/ATMCardImg.png'
 import phoneCallsCardImg from '../../../img/phoneCallsCard.png'
 import securityCameraCardImg from '../../../img/securityCameraCard.png'
+import BankAccountImg from '../../../img/BankAccountImg.png'
+
+
 
 export const imgs = {
   'interviewCardImg' : interviewCardImg,
   'ATMCardImg': ATMCardImg,
   'phoneCallsCardImg' : phoneCallsCardImg,
   'securityCameraCardImg' : securityCameraCardImg,
+  'BankAccountImg' : BankAccountImg,
 }
 
 

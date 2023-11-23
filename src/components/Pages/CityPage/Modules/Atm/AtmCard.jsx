@@ -68,7 +68,3 @@ export default function AtmCard({card}) {
     </Card>
   )
 }
-
-{/* <div>
-{card.transaction_type} - {card.amount} - {card.account_number.account_number} - {card.atm_location.name} - {card.date}
-</div> */}
