@@ -30,13 +30,13 @@ export default function FlightCard({card}) {
           />
           <CardContent>
             <Typography gutterBottom variant="caption" component="div" color='text.secondary'> 
-              مبدا : 
+            : مبدا  
             </Typography>
             <Typography gutterBottom variant="subtitle2" component="div"> 
               {card.origin_airport_id.full_name}
             </Typography>
             <Typography gutterBottom variant="caption" component="div" color='text.secondary'> 
-              مقصد : 
+            : مقصد  
             </Typography>
             <Typography gutterBottom variant="subtitle2" component="div">
               {card.destination_airport_id.full_name}
@@ -52,6 +52,14 @@ export default function FlightCard({card}) {
             image={cameraBlackWhite}
             alt={`${card.account_number}`}
           />
+
+            <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="h6">
+                : نوع پرواز
+            </Typography>
+            <Typography color={'#fff'} variant="h6">
+              {card.type === 'local' ? 'داخلی' : 'خارجی'}
+            </Typography>
+
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '5px 0'}}>
               <Typography color={'#fff'} variant="subtitle2">
                 {card.date.split("-").join('/')}
@@ -65,14 +73,6 @@ export default function FlightCard({card}) {
               </Typography>
               <AccessTimeIcon fontSize='small' sx={{padding:'0 5px', color:'#fff'}}/>
             </div>
-
-            <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '5px 0'}}>
-            <Typography color={'#fff'} gutterBottom variant="caption" component="div">
-              نوع پرواز: {card.type === 'local' ? 'داخلی' : 'خارجی'}
-            <AirplanemodeActiveIcon color={'#fff'} fontSize='small' sx={{padding:'0 5px'}}/>
-            </Typography>
-            </div>
-
           </CardContent>
         </>
         }
