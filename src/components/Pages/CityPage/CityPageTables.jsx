@@ -20,6 +20,7 @@ import ATMCardImg from '../../../img/ATMCardImg.png'
 import phoneCallsCardImg from '../../../img/phoneCallsCard.png'
 import securityCameraCardImg from '../../../img/securityCameraCard.png'
 import BankAccountImg from '../../../img/BankAccountImg.png'
+import AirportImg from '../../../img/AirportImg.png'
 
 
 
@@ -29,6 +30,7 @@ export const imgs = {
   'phoneCallsCardImg' : phoneCallsCardImg,
   'securityCameraCardImg' : securityCameraCardImg,
   'BankAccountImg' : BankAccountImg,
+  'AirportImg' : AirportImg,
 }
 
 

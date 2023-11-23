@@ -57,7 +57,3 @@ export default function BankAccountCard({card}) {
     </Card>
   )
 }
-
-{/* <div>
-{card.account_number} - {card.created} - {card.person_id.name}
-</div> */}
