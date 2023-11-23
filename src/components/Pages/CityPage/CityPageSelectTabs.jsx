@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import bg2 from '../../../img/bg2.jpg'
+import sideframe1 from '../../../img/sideframe1.png'
 
 function a11yProps(index) {
     return {
@@ -18,7 +19,7 @@ export default function CityPageSelectTabs({value, handleChange}) {
 
   return (
     <Box
-      sx={{ flexGrow: 1,display: 'flex', height: '100%', backgroundImage:`url(${bg2})`, backgroundSize:'cover'}}
+      sx={{ flexGrow: 1,display: 'flex', height: '100%', backgroundImage:`url(${sideframe1})`, backgroundSize:'cover'}}
     >
       <Tabs
         orientation="vertical"
