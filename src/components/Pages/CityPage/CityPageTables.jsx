@@ -28,6 +28,7 @@ import personCardImg from '../../../img/personCardImg.png'
 import Person from './Modules/Person/Person';
 import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
 import InterViewSearchInput from './Modules/InterViews/InterViewSearchInput';
+import BankAccountSearchInput from './Modules/Bank Account/BankAccountSearchInput';
 
 
 
@@ -92,6 +93,8 @@ export default function CityPageTables({value}) {
 
   // bank section
   const [bankData, setBankData] = React.useState([])
+  const [bankAccountSearch, setBankAccountSearch] = React.useState([])
+  const [bankAccountSearchDate, setBankAccountSearchDate] = React.useState('')
 
   // atm section
   const [atmData, setAtmData] = React.useState([])
@@ -164,6 +167,14 @@ export default function CityPageTables({value}) {
         <BankAccount
           bankData = {bankData}
           setBankData = {setBankData}
+          bankAccountSearch = {bankAccountSearch}
+          bankAccountSearchDate = {bankAccountSearchDate}
+        />
+        <BankAccountSearchInput
+          bankAccountSearch = {bankAccountSearch}
+          bankAccountSearchDate = {bankAccountSearchDate} 
+          setBankAccountSearch = {setBankAccountSearch}
+          setBankAccountSearchDate = {setBankAccountSearchDate}
         />
       </TabPanel>
       <TabPanel value={value} index={4}>

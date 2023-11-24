@@ -30,13 +30,13 @@ export default function BankAccountCard({card}) {
                 شماره حساب : {card.account_number}
             </Typography>
             <Typography gutterBottom variant="caption" component="div" color="text.secondary">
-              نام صاحب حساب : {card.person_id.name}
+              نام : {card.person_id.name}
             </Typography>
           </CardContent>
           </>
         :
         <>
-        <CardContent sx={{height:'345px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'322px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"

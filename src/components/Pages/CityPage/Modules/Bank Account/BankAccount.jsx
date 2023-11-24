@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 import BankAccountCard from './BankAccountCard'
 
-export default function BankAccount({bankData, setBankData}) {
+export default function BankAccount({bankData, setBankData, bankAccountSearch, bankAccountSearchDate}) {
 
     useEffect(
         function(){
@@ -28,19 +28,41 @@ export default function BankAccount({bankData, setBankData}) {
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = bankData.slice(startIndex, endIndex)
+        // Get the data to display on the current page.
+        const [currentData, setCurrentData] = React.useState(bankData)
+
+        useEffect(
+            function () { 
+                setCurrentData(bankData
+                    .filter(obj => bankAccountSearchDate !== '' ? new Date(obj.date) >= new Date(bankAccountSearchDate) : obj)
+                    .filter(obj => bankAccountSearch !== '' ? obj.person_id.name.includes(bankAccountSearch) : obj)
+                )
+             },
+            [bankData, bankAccountSearch, bankAccountSearchDate]
+        )
+        
+        // count page
+        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+
+        useEffect(
+            () => {
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+                }, 
+        [currentData]
+        )
+
 
     return (
         <div>
             <Grid container spacing={1}>
-                {currentData.map(
+                {currentData.slice(startIndex, endIndex).map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
                     <BankAccountCard key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(bankData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={countPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }
