@@ -26,6 +26,7 @@ import streetCardImg from '../../../img/streetCardImg.png'
 import passengerCardImg from '../../../img/passengerCardImg.png'
 import personCardImg from '../../../img/personCardImg.png'
 import Person from './Modules/Person/Person';
+import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
 
 
 
@@ -79,6 +80,8 @@ export default function CityPageTables({value}) {
 
   // phoneCalls section
   const [phoneData, setPhoneData] = React.useState([])
+  const [phoneCallSearch, setPhoneCallSearch] = React.useState([])
+  const [phoneCallSearchDate, setPhoneCallSearchDate] = React.useState('')
 
   // interView section
   const [interviewData, setInterviewData] = React.useState([])
@@ -129,6 +132,14 @@ export default function CityPageTables({value}) {
         <PhoneCalls 
           phoneData = {phoneData}
           setPhoneData = {setPhoneData}
+          phoneCallSearch = {phoneCallSearch}
+          phoneCallSearchDate = {phoneCallSearchDate}
+        />
+        <PhoneCallSearchInput
+          phoneCallSearch = {phoneCallSearch}
+          setPhoneCallSearch = {setPhoneCallSearch}
+          phoneCallSearchDate = {phoneCallSearchDate}
+          setPhoneCallSearchDate = {setPhoneCallSearchDate}
         />
       </TabPanel>
       <TabPanel value={value} index={2}>

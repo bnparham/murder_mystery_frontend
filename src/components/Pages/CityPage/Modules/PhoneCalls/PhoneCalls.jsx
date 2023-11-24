@@ -6,7 +6,7 @@ import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 import PhoneCards from './PhoneCards';
 
-export default function PhoneCalls({phoneData, setPhoneData}) {
+export default function PhoneCalls({phoneData, setPhoneData, phoneCallSearch, phoneCallSearchDate}) {
 
     useEffect(
         function(){
@@ -30,20 +30,42 @@ export default function PhoneCalls({phoneData, setPhoneData}) {
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         
+        // const currentData = phoneData.slice(startIndex, endIndex)
+
         // Get the data to display on the current page.
-        const currentData = phoneData.slice(startIndex, endIndex)
+        const [currentData, setCurrentData] = React.useState(phoneData)
+
+        useEffect(
+            function () { 
+                setCurrentData(phoneData
+                    .filter(obj => phoneCallSearchDate !== '' ? new Date(obj.date) >= new Date(phoneCallSearchDate) : obj)
+                    .filter(obj => obj.duration >= Number(phoneCallSearch))
+                )
+             },
+            [phoneCallSearch, phoneData, phoneCallSearchDate]
+        )
+        
+        // count page
+        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+
+        useEffect(
+            () => {
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+                }, 
+        [currentData]
+        )
 
     return (
         <div>
             <Grid container spacing={1}>
-                {currentData.map(
+                {currentData.slice(startIndex, endIndex).map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
                     <PhoneCards key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(phoneData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={countPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }

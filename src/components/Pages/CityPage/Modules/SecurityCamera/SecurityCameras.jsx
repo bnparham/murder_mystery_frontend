@@ -27,10 +27,10 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
         // Calculate the start and end index for the current page.
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
-        
-        const [currentData, setCurrentData] = React.useState(securityData)
 
-        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+
+        // Get the data to display on the current page.
+        const [currentData, setCurrentData] = React.useState(securityData)
 
         useEffect(
             function () { 
@@ -41,7 +41,10 @@ export default function SecurityCameras({securitySearch, setSecurityData, securi
              },
             [securitySearch, securityData, securityRadio, securitySearchDate]
         )
-             
+        
+        // count page
+        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)     
+
         useEffect(
             () => {
                 setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
