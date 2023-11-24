@@ -27,6 +27,7 @@ import passengerCardImg from '../../../img/passengerCardImg.png'
 import personCardImg from '../../../img/personCardImg.png'
 import Person from './Modules/Person/Person';
 import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
+import InterViewSearchInput from './Modules/InterViews/InterViewSearchInput';
 
 
 
@@ -86,6 +87,8 @@ export default function CityPageTables({value}) {
 
   // interView section
   const [interviewData, setInterviewData] = React.useState([])
+  const [interviewSearchDate, setInterViewSearchDate] = React.useState('')
+
 
   // bank section
   const [bankData, setBankData] = React.useState([])
@@ -150,6 +153,11 @@ export default function CityPageTables({value}) {
         <InterViews
           interviewData = {interviewData}
           setInterviewData = {setInterviewData}
+          interviewSearchDate = {interviewSearchDate}
+        />
+        <InterViewSearchInput
+          interviewSearchDate = {interviewSearchDate}
+          setInterViewSearchDate = {setInterViewSearchDate}
         />
       </TabPanel>
       <TabPanel value={value} index={3}>

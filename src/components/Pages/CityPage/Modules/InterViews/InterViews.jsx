@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 import InterViewCards from './InterViewCards'
 
-export default function InterViews({interviewData, setInterviewData}) {
+export default function InterViews({interviewData, setInterviewData, interviewSearchDate}) {
 
     useEffect(
         function(){
@@ -28,19 +28,37 @@ export default function InterViews({interviewData, setInterviewData}) {
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = interviewData.slice(startIndex, endIndex)
+        const [currentData, setCurrentData] = React.useState(interviewData)
+        useEffect(
+            function () { 
+                setCurrentData(interviewData
+                    .filter(obj => interviewSearchDate !== '' ? new Date(obj.date) >= new Date(interviewSearchDate) : obj)
+                )
+             },
+            [interviewData, interviewSearchDate]
+        )
+
+        // count page
+        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+
+        useEffect(
+            () => {
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+                }, 
+        [currentData]
+        )
 
     return (
         <div>
             <Grid container spacing={1}>
-                {currentData.map(
+                {currentData.slice(startIndex, endIndex).map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
                     <InterViewCards key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(interviewData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={countPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }

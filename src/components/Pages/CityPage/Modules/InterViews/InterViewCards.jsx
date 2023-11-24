@@ -48,7 +48,7 @@ export default function InterViewCards({card}) {
             alt={`${card.name}-${card.date}`}
           />
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '20px 0'}}>
-              <Typography variant="caption" color="#ffff">
+              <Typography variant="subtitle2" color="#ffff">
                 شرح : {card.transcript}
               </Typography>
             </div>
