@@ -29,6 +29,7 @@ import Person from './Modules/Person/Person';
 import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
 import InterViewSearchInput from './Modules/InterViews/InterViewSearchInput';
 import BankAccountSearchInput from './Modules/Bank Account/BankAccountSearchInput';
+import AtmSearchInput from './Modules/Atm/AtmSearchInput';
 
 
 
@@ -93,11 +94,15 @@ export default function CityPageTables({value}) {
 
   // bank section
   const [bankData, setBankData] = React.useState([])
-  const [bankAccountSearch, setBankAccountSearch] = React.useState([])
-  const [bankAccountSearchDate, setBankAccountSearchDate] = React.useState('')
+  const [atmStreetSearch, setAtmStreetSearch] = React.useState([])
+  const [atmSearchDate, setAtmSearchDate] = React.useState('')
+  const [atmRadio, setAtmRadio] = React.useState('')
 
   // atm section
   const [atmData, setAtmData] = React.useState([])
+  const [bankAccountSearch, setBankAccountSearch] = React.useState([])
+  const [bankAccountSearchDate, setBankAccountSearchDate] = React.useState('')
+
 
   // airport section
   const [airportData, setAirportData] = React.useState([])
@@ -181,6 +186,16 @@ export default function CityPageTables({value}) {
         <Atm
           atmData = {atmData}
           setAtmData = {setAtmData}
+          atmStreetSearch = {atmStreetSearch}
+          atmRadio = {atmRadio}
+          atmSearchDate = {atmSearchDate}
+        />
+        <AtmSearchInput
+          atmStreetSearch = {atmStreetSearch}
+          atmSearchDate = {atmSearchDate}
+          setAtmStreetSearch = {setAtmStreetSearch}
+          setAtmRadio = {setAtmRadio}
+          setAtmSearchDate = {setAtmSearchDate}
         />
       </TabPanel>
       <TabPanel value={value} index={5}>

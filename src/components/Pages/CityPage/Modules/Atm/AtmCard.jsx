@@ -26,7 +26,7 @@ export default function AtmCard({card}) {
           />
           <CardContent>
             <Typography gutterBottom variant="subtitle2" component="div">
-              لوکیشن : {card.atm_location.name}
+              خیابان : {card.atm_location.name}
             </Typography>
             <Typography gutterBottom variant="caption" component="div" color="text.secondary"> 
                 عملیات : {card.transaction_type}

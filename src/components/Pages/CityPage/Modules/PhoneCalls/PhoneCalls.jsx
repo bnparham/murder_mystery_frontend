@@ -30,8 +30,6 @@ export default function PhoneCalls({phoneData, setPhoneData, phoneCallSearch, ph
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         
-        // const currentData = phoneData.slice(startIndex, endIndex)
-
         // Get the data to display on the current page.
         const [currentData, setCurrentData] = React.useState(phoneData)
 
