@@ -60,6 +60,13 @@ export default function FlightCard({card}) {
               {card.type === 'local' ? 'داخلی' : 'خارجی'}
             </Typography>
 
+            <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="h6">
+                : شماره پرواز
+            </Typography>
+            <Typography color={'#fff'} variant="h6">
+              {card.id}
+            </Typography>
+
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '5px 0'}}>
               <Typography color={'#fff'} variant="subtitle2">
                 {card.date.split("-").join('/')}

@@ -24,6 +24,8 @@ import AirportImg from '../../../img/AirportImg.png'
 import flightCardImg from '../../../img/flightCardImg.png'
 import streetCardImg from '../../../img/streetCardImg.png'
 import passengerCardImg from '../../../img/passengerCardImg.png'
+import personCardImg from '../../../img/personCardImg.png'
+import Person from './Modules/Person/Person';
 
 
 
@@ -37,6 +39,7 @@ export const imgs = {
   'flightCardImg' : flightCardImg,
   'streetCardImg' : streetCardImg,
   'passengerCardImg' : passengerCardImg,
+  'personCardImg' : personCardImg,
 }
 
 
@@ -98,6 +101,9 @@ export default function CityPageTables({value}) {
   // location section
   const [streetData, setStreetData] = React.useState([])
   const [locationSearch, setLocationSearch] = React.useState('')
+
+  // persom section
+  const [personData, setPersonData] = React.useState([])
 
   return (
     <>
@@ -173,7 +179,10 @@ export default function CityPageTables({value}) {
         />
       </TabPanel>
       <TabPanel value={value} index={9}>
-        Item eight
+        <Person
+          personData={personData}
+          setPersonData={setPersonData}
+        />
       </TabPanel>
     </>
   )
