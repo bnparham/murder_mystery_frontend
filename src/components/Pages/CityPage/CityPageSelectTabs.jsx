@@ -19,7 +19,7 @@ export default function CityPageSelectTabs({value, handleChange}) {
 
   return (
     <Box
-      sx={{ flexGrow: 1,display: 'flex', height: '100%', backgroundImage:`url(${sideframe1})`, backgroundSize:'cover'}}
+      sx={{ flexGrow: 1,display: 'flex', height: '95vh', backgroundImage:`url(${sideframe1})`, backgroundSize:'cover'}}
     >
       <Tabs
         orientation="vertical"

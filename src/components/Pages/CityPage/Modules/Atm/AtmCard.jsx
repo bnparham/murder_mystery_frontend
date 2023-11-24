@@ -35,7 +35,7 @@ export default function AtmCard({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'315px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'318px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"

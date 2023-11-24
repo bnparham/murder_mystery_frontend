@@ -38,7 +38,7 @@ export default function PersonCard({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'305px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'295px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"

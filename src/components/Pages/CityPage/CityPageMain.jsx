@@ -56,7 +56,8 @@ export default function CityPageMain() {
            value === 9 ? `url(${whiteBG})`
            :
            ''
-          , backgroundSize:'cover' 
+          , backgroundSize:'cover' ,
+          height: '95vh'
           }}>
           <CrimePageColContainer>
             <CityPageTables value={value} />
