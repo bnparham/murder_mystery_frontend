@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function PhoneCallSearchInput({setPhoneCallSearch, phoneCallSearch, setPhoneCallSearchDate, phoneCallSearchDate}) {
+export default function PhoneCallSearchInput({setPhoneCallSearch, phoneCallSearch, setPhoneCallSearchDate, phoneCallSearchDate, setPhoneCallSearchCaller, phoneCallSearchCaller}) {
 
   return (
     <Box
@@ -16,6 +16,15 @@ export default function PhoneCallSearchInput({setPhoneCallSearch, phoneCallSearc
       autoComplete="off"
     >
       <div>
+      <TextField
+          id="standard-search"
+          label="جستجو شماره تماس گیرنده"
+          type="search"
+          variant="standard"
+          color="secondary"
+          onChange={(e) => setPhoneCallSearchCaller(e.target.value)}
+          value={phoneCallSearchCaller}
+        />
         <TextField
           id="standard-search"
           label="جستجو بر اساس مدت مکالمه"

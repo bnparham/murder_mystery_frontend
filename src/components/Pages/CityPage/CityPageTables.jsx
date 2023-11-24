@@ -81,6 +81,7 @@ export default function CityPageTables({value}) {
   // phoneCalls section
   const [phoneData, setPhoneData] = React.useState([])
   const [phoneCallSearch, setPhoneCallSearch] = React.useState([])
+  const [phoneCallSearchCaller, setPhoneCallSearchCaller] = React.useState([])
   const [phoneCallSearchDate, setPhoneCallSearchDate] = React.useState('')
 
   // interView section
@@ -134,12 +135,15 @@ export default function CityPageTables({value}) {
           setPhoneData = {setPhoneData}
           phoneCallSearch = {phoneCallSearch}
           phoneCallSearchDate = {phoneCallSearchDate}
+          phoneCallSearchCaller = {phoneCallSearchCaller}
         />
         <PhoneCallSearchInput
           phoneCallSearch = {phoneCallSearch}
           setPhoneCallSearch = {setPhoneCallSearch}
           phoneCallSearchDate = {phoneCallSearchDate}
           setPhoneCallSearchDate = {setPhoneCallSearchDate}
+          phoneCallSearchCaller = {phoneCallSearchCaller}
+          setPhoneCallSearchCaller = {setPhoneCallSearchCaller}
         />
       </TabPanel>
       <TabPanel value={value} index={2}>

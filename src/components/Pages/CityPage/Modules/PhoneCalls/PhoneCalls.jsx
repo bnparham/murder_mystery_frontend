@@ -6,7 +6,7 @@ import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 import PhoneCards from './PhoneCards';
 
-export default function PhoneCalls({phoneData, setPhoneData, phoneCallSearch, phoneCallSearchDate}) {
+export default function PhoneCalls({phoneData, setPhoneData, phoneCallSearch, phoneCallSearchDate, phoneCallSearchCaller}) {
 
     useEffect(
         function(){
@@ -40,9 +40,10 @@ export default function PhoneCalls({phoneData, setPhoneData, phoneCallSearch, ph
                 setCurrentData(phoneData
                     .filter(obj => phoneCallSearchDate !== '' ? new Date(obj.date) >= new Date(phoneCallSearchDate) : obj)
                     .filter(obj => obj.duration >= Number(phoneCallSearch))
+                    .filter(obj => phoneCallSearchCaller !== '' ? obj.caller.phone_number.toString().includes(phoneCallSearchCaller) : obj)
                 )
              },
-            [phoneCallSearch, phoneData, phoneCallSearchDate]
+            [phoneCallSearch, phoneData, phoneCallSearchDate, phoneCallSearchCaller]
         )
         
         // count page
