@@ -42,6 +42,7 @@ import personDark from '../../../img/personDark.png'
 import phoneDark from '../../../img/phoneDark.png'
 import cameraDark from '../../../img/cameraDark.png'
 import AirportDark from '../../../img/AirportDark.png'
+import FlightSearchInput from './Modules/Flights/FlightSearchInput';
 
 
 
@@ -133,6 +134,9 @@ export default function CityPageTables({value}) {
 
   // flight section
   const [flightData, setFlightData] = React.useState([])
+  const [flightSearch, setFlightSearch] = React.useState('')
+  const [flightRadio, setFlightRadio] = React.useState('')
+  const [flightSearchDate, setFlightSearchDate] = React.useState('')
 
   // passenger section
   const [passengerData, setPassengerData] = React.useState([])
@@ -237,6 +241,17 @@ export default function CityPageTables({value}) {
         <Flight
           flightData = {flightData}
           setFlightData = {setFlightData}
+          flightSearch = {flightSearch}
+          flightRadio = {flightRadio}
+          flightSearchDate = {flightSearchDate}
+        />
+        <FlightSearchInput
+          flightSearch = {flightSearch}
+          flightRadio = {flightRadio}
+          flightSearchDate = {flightSearchDate}
+          setFlightSearch = {setFlightSearch}
+          setFlightRadio = {setFlightRadio}
+          setFlightSearchDate = {setFlightSearchDate}
         />
       </TabPanel>
       <TabPanel value={value} index={7}>

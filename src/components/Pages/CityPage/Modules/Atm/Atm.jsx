@@ -28,7 +28,6 @@ export default function Atm({atmData, setAtmData, atmStreetSearch, atmSearchDate
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        // Get the data to display on the current page.
         const [currentData, setCurrentData] = React.useState(atmData)
 
         useEffect(

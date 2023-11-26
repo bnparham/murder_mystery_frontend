@@ -4,7 +4,7 @@ import CustomPagination from '../CustomPagination';
 import FlightCard from './FlightCard';
 
 
-export default function Flight({flightData, setFlightData}) {
+export default function Flight({flightData, setFlightData, flightRadio, flightSearch, flightSearchDate}) {
 
     useEffect(
         function(){
@@ -29,19 +29,43 @@ export default function Flight({flightData, setFlightData}) {
         const endIndex = startIndex + itemsPerPage;
         
         // Get the data to display on the current page.
-        const currentData = flightData.slice(startIndex, endIndex)
+        const [currentData, setCurrentData] = React.useState(flightData)
+
+        useEffect(
+            function () { 
+                setCurrentData(flightData
+                    .filter(obj => flightSearchDate !== '' ? new Date(obj.date) >= new Date(flightSearchDate) : obj)
+                    .filter(obj => flightSearch !== '' ? obj.origin_airport_id.full_name.includes(flightSearch) : obj)
+                    .filter(
+                        obj => flightRadio !== '' ? obj.type === flightRadio : obj
+                    )
+                )
+             },
+            [flightData, flightSearchDate, flightSearch, flightRadio]
+        )
+        
+        // count page
+        const [countPage, setCountPage] = React.useState(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)     
+
+        useEffect(
+            () => {
+                setCountPage(currentData.length/itemsPerPage === 0 ? Math.floor(currentData.length/itemsPerPage): Math.floor(currentData.length/itemsPerPage) + 1)
+                }, 
+        [currentData]
+        )
+
 
     return (
         <div>
             <Grid container spacing={1}>
-                {currentData.map(
+                {currentData.slice(startIndex, endIndex).map(
                 c => 
                 <Grid xs={12} md={2} sx={{p:1}}>
                     <FlightCard key={c.id} card={c}/>
                 </Grid>
                 )}
             </Grid>
-            <CustomPagination count={Math.floor(flightData.length/itemsPerPage) + 1} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+            <CustomPagination count={countPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     )
 }
