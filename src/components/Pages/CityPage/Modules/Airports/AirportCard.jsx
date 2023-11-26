@@ -7,10 +7,16 @@ import {imgs} from '../../CityPageTables'
 
 export default function AirportCard({card}) {
 
+  const [isOpen, setIsOpen] = React.useState(true)
+
   return (
     <Card sx={{ maxWidth: 395}}>
-      <CardActionArea sx={{p:0}}>
-      <CardMedia
+      <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
+      {
+        isOpen === true
+        ?
+        <>
+        <CardMedia
             component="img"
             height="270"
             image={imgs.AirportImg}
@@ -24,6 +30,19 @@ export default function AirportCard({card}) {
               شهر : {card.city}
             </Typography>
           </CardContent>
+        </>
+        :
+        <>
+        <CardContent sx={{height:'318px', backgroundColor:'#071636'}}>
+        <CardMedia
+            component="img"
+            height="100"
+            image={imgs.AirportDark}
+            alt={`${card.full_name}`}
+          />
+          </CardContent>
+        </>
+      }
       </CardActionArea>
     </Card>
   )

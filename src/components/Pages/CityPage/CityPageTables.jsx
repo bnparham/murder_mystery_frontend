@@ -18,6 +18,7 @@ import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
 import InterViewSearchInput from './Modules/InterViews/InterViewSearchInput';
 import BankAccountSearchInput from './Modules/Bank Account/BankAccountSearchInput';
 import AtmSearchInput from './Modules/Atm/AtmSearchInput';
+import AirportSearchInput from './Modules/Airports/AirportSearchInput';
 
 
 // img address
@@ -40,7 +41,8 @@ import passengerDark from '../../../img/passengerDark.png'
 import personDark from '../../../img/personDark.png'
 import phoneDark from '../../../img/phoneDark.png'
 import cameraDark from '../../../img/cameraDark.png'
-import AirportSearchInput from './Modules/Airports/AirportSearchInput';
+import AirportDark from '../../../img/AirportDark.png'
+
 
 
 
@@ -63,6 +65,7 @@ export const imgs = {
   'personDark' : personDark,
   'phoneDark' : phoneDark,
   'cameraDark' : cameraDark,
+  'AirportDark' : AirportDark,
 }
 
 
