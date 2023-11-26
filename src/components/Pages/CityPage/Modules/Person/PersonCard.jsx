@@ -42,7 +42,7 @@ export default function PersonCard({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={phoneDark}
+            image={imgs.personDark}
             alt={`${card.name}`}
           />
             <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="subtitle2">

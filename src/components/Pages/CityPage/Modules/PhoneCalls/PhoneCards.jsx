@@ -11,9 +11,6 @@ import { CardActionArea } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TodayIcon from '@mui/icons-material/Today';
 
-import phoneDark from '../../../../../img/phoneDark.png'
-
-
 // load imgs
 import {imgs} from '../../CityPageTables'
 
@@ -49,7 +46,7 @@ export default function PhoneCards({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={phoneDark}
+            image={imgs.phoneDark}
             alt={`${card.caller.phone_number}`}
           />
             <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="h6">

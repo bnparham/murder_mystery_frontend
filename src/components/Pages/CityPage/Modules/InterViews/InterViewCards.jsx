@@ -1,7 +1,6 @@
 import React from 'react'
 // import interviewCardImg from '../../../../../img/interviewCardImg.png'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
 import TodayIcon from '@mui/icons-material/Today';
 
 // load imgs
@@ -44,7 +43,7 @@ export default function InterViewCards({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={cameraBlackWhite}
+            image={imgs.interviewDark}
             alt={`${card.name}-${card.date}`}
           />
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '20px 0'}}>

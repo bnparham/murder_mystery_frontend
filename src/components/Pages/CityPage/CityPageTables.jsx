@@ -12,7 +12,13 @@ import Airport from './Modules/Airports/Airport';
 import Flight from './Modules/Flights/Flight';
 import Passenger from './Modules/Passengers/Passenger';
 import Street from './Modules/Street/Street';
+import Person from './Modules/Person/Person';
 import LocationSearchInput from './Modules/Street/LocationtSearchInput';
+import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
+import InterViewSearchInput from './Modules/InterViews/InterViewSearchInput';
+import BankAccountSearchInput from './Modules/Bank Account/BankAccountSearchInput';
+import AtmSearchInput from './Modules/Atm/AtmSearchInput';
+
 
 // img address
 import interviewCardImg from '../../../img/interviewCardImg.png'
@@ -25,11 +31,15 @@ import flightCardImg from '../../../img/flightCardImg.png'
 import streetCardImg from '../../../img/streetCardImg.png'
 import passengerCardImg from '../../../img/passengerCardImg.png'
 import personCardImg from '../../../img/personCardImg.png'
-import Person from './Modules/Person/Person';
-import PhoneCallSearchInput from './Modules/PhoneCalls/PhoneCallSearchInput';
-import InterViewSearchInput from './Modules/InterViews/InterViewSearchInput';
-import BankAccountSearchInput from './Modules/Bank Account/BankAccountSearchInput';
-import AtmSearchInput from './Modules/Atm/AtmSearchInput';
+// dark iamges
+import AtmDark from '../../../img/AtmDark.png'
+import interviewDark from '../../../img/interviewDark.png'
+import BankAccountDark from '../../../img/BankAccountDark.png'
+import flightDark from '../../../img/flightDark.png'
+import passengerDark from '../../../img/passengerDark.png'
+import personDark from '../../../img/personDark.png'
+import phoneDark from '../../../img/phoneDark.png'
+import cameraDark from '../../../img/cameraDark.png'
 
 
 
@@ -44,6 +54,14 @@ export const imgs = {
   'streetCardImg' : streetCardImg,
   'passengerCardImg' : passengerCardImg,
   'personCardImg' : personCardImg,
+  'AtmDark' : AtmDark,
+  'interviewDark' : interviewDark,
+  'BankAccountDark' : BankAccountDark,
+  'flightDark' : flightDark,
+  'passengerDark' : passengerDark,
+  'personDark' : personDark,
+  'phoneDark' : phoneDark,
+  'cameraDark' : cameraDark,
 }
 
 

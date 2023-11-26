@@ -9,10 +9,6 @@ import { CardActionArea } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TodayIcon from '@mui/icons-material/Today';
 
-
-
-import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
-
 // load imgs
 import {imgs} from '../../CityPageTables'
 
@@ -48,7 +44,7 @@ export default function SecurityCards({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={cameraBlackWhite}
+            image={imgs.cameraDark}
             alt={`${card.license_plate.license_plate}`}
           />
             <Typography sx={{margin:'10px 0'}} color={'#fff'} gutterBottom variant="h5" component="div">

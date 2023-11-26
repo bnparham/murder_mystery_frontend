@@ -1,8 +1,5 @@
 import React from 'react'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
-import TodayIcon from '@mui/icons-material/Today';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
 // load imgs

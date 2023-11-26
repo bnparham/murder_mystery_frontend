@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
 import TodayIcon from '@mui/icons-material/Today';
 
 
@@ -39,7 +38,7 @@ export default function AtmCard({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={cameraBlackWhite}
+            image={imgs.AtmDark}
             alt={`${card.atm_location.name}`}
           />
 

@@ -1,8 +1,5 @@
 import React from 'react'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
-import TodayIcon from '@mui/icons-material/Today';
-
 
 // load imgs
 import {imgs} from '../../CityPageTables'
@@ -38,7 +35,7 @@ export default function PassengerCard({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={cameraBlackWhite}
+            image={imgs.passengerDark}
             alt={`${card.person_id.name}`}
           />
             <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="h6">

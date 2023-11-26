@@ -1,8 +1,6 @@
 import React from 'react'
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import cameraBlackWhite from '../../../../../img/cameraBlackWhite.png'
 import TodayIcon from '@mui/icons-material/Today';
-import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
@@ -49,7 +47,7 @@ export default function FlightCard({card}) {
         <CardMedia
             component="img"
             height="100"
-            image={cameraBlackWhite}
+            image={imgs.flightDark}
             alt={`${card.account_number}`}
           />
 
