@@ -8,7 +8,6 @@ import { CardActionArea } from '@mui/material';
 
 
 // icons
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import TodayIcon from '@mui/icons-material/Today';
 
 // load imgs
