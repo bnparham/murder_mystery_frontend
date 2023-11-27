@@ -9,6 +9,9 @@ import { Button, Card, CardActions, CardContent, Typography, Alert } from '@mui/
 import MenuDetails from './MenuDetails';
 import MenuHoverDetails from './MenuHoverDetails';
 
+import { NavLink, Link } from 'react-router-dom'
+
+
 // images
 import m1 from '../../../img/m1.jpg'
 import m2 from '../../../img/m2.jpg'
@@ -23,7 +26,6 @@ import Fingerprint from '@mui/icons-material/Fingerprint';
 import CrimeStepper from './CrimeStepper';
 import CityStepper from './CityStepper';
 
-import { NavLink, Link } from 'react-router-dom'
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -68,11 +70,11 @@ export default function MenuPageMain() {
                   گزارشی دقیق از آخرین جرائم به وقوع پیوسته در شهر به همراه مدارک ضمیمه پرونده
                   </Typography>
                   <CrimeStepper/>
-                  <Button size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<LocalPoliceIcon size='large'/>}>
-                      <Link to='/crimepage' style={{textDecoration:'none', color:'#fff'}}>
-                        مشاهده
-                      </Link>
-                  </Button>
+                  <Link to='/crimepage' style={{textDecoration:'none', color:'#fff'}}>
+                    <Button size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<LocalPoliceIcon size='large'/>}>
+                      مشاهده
+                    </Button>
+                  </Link>
                 </>
                 :
                 <Typography variant="h6" color="#ffff">
@@ -101,11 +103,11 @@ export default function MenuPageMain() {
                   آخرین گزارشات فرودگاه ها، اداره مخابرات، دوربین هایی امنیتی پلیس راهور و سایر مراکز   
                   </Typography>
                   <CityStepper/>
-                  <Button color='warning' size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<Fingerprint size='large'/>}>
                   <Link to='/citypage' style={{textDecoration:'none', color:'#fff'}}>
-                        مشاهده
-                      </Link>
-                  </Button>
+                    <Button color='warning' size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<Fingerprint size='large'/>}>
+                          مشاهده
+                    </Button>
+                  </Link>
                 </>
                 :
                 <Typography variant="h6" color="#ffff">
