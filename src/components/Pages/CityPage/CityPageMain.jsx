@@ -78,7 +78,7 @@ export default function CityPageMain() {
     </Grid>
     <div>
         <Link to='/' style={{textDecoration:'none', color:'#fff'}}>
-        <Button size='medium' sx={{mt:'5px'}} variant="contained" startIcon={<ArrowBackIcon size='large'/>}>
+        <Button size='medium' sx={{mt:'5px',width:'150px'}} variant="contained" startIcon={<ArrowBackIcon size='large'/>}>
           بازگشت
         </Button>
         </Link>
