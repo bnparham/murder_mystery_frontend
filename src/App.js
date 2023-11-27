@@ -14,9 +14,9 @@ export default function App() {
       <AppLayout>
         <Routes>
           <Route path='/' element={<MenuPageMain/>}>
-            <Route path='/crimePage' element={<CrimePageMain/>}/>
-            <Route path='/cityPage' element={<CityPageMain />}/>
           </Route>
+          <Route path={'/crimepage'} element={<CrimePageMain/>}/>
+          <Route path={'/citypage'} element={<CityPageMain />}/>
         </Routes>
       </AppLayout>
     </BrowserRouter>

@@ -23,6 +23,8 @@ import Fingerprint from '@mui/icons-material/Fingerprint';
 import CrimeStepper from './CrimeStepper';
 import CityStepper from './CityStepper';
 
+import { NavLink, Link } from 'react-router-dom'
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#000',
@@ -67,7 +69,9 @@ export default function MenuPageMain() {
                   </Typography>
                   <CrimeStepper/>
                   <Button size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<LocalPoliceIcon size='large'/>}>
-                      مشاهده
+                      <Link to='/crimepage' style={{textDecoration:'none', color:'#fff'}}>
+                        مشاهده
+                      </Link>
                   </Button>
                 </>
                 :
@@ -98,7 +102,9 @@ export default function MenuPageMain() {
                   </Typography>
                   <CityStepper/>
                   <Button color='warning' size='medium' sx={{mt:'10px'}} variant="contained" startIcon={<Fingerprint size='large'/>}>
-                      مشاهده
+                  <Link to='/citypage' style={{textDecoration:'none', color:'#fff'}}>
+                        مشاهده
+                      </Link>
                   </Button>
                 </>
                 :
