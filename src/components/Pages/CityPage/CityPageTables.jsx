@@ -43,6 +43,7 @@ import phoneDark from '../../../img/phoneDark.png'
 import cameraDark from '../../../img/cameraDark.png'
 import AirportDark from '../../../img/AirportDark.png'
 import FlightSearchInput from './Modules/Flights/FlightSearchInput';
+import PersonSearchInput from './Modules/Person/PersonSearchInput';
 
 
 
@@ -145,8 +146,11 @@ export default function CityPageTables({value}) {
   const [streetData, setStreetData] = React.useState([])
   const [locationSearch, setLocationSearch] = React.useState('')
 
-  // persom section
+  // person section
   const [personData, setPersonData] = React.useState([])
+  const [personPhoneNumberSearch, setPersonPhoneNumberSearch] = React.useState('')
+  const [personPassportSearch, setPersonPassportSearch] = React.useState('')
+  const [personLicenseSearch, setPersonLicenseSearch] = React.useState('')
 
   return (
     <>
@@ -275,6 +279,17 @@ export default function CityPageTables({value}) {
         <Person
           personData={personData}
           setPersonData={setPersonData}
+          personPhoneNumberSearch = {personPhoneNumberSearch}
+          personPassportSearch = {personPassportSearch}
+          personLicenseSearch = {personLicenseSearch}
+        />
+        <PersonSearchInput
+          personPhoneNumberSearch = {personPhoneNumberSearch}
+          personPassportSearch = {personPassportSearch}
+          personLicenseSearch = {personLicenseSearch}  
+          setPersonPhoneNumberSearch = {setPersonPhoneNumberSearch}
+          setPersonPassportSearch = {setPersonPassportSearch}
+          setPersonLicenseSearch = {setPersonLicenseSearch}
         />
       </TabPanel>
     </>
