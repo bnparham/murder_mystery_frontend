@@ -10,6 +10,10 @@ import tableBG from '../../../img/tableBG.jpg'
 import whiteBG from '../../../img/whiteBG.jpg'
 import CrimePageSelectTabs from './CrimePageSelectTabs';
 import CrimePageTables from './CrimePageTables';
+import { Link } from 'react-router-dom';
+import { Button} from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
@@ -29,7 +33,8 @@ export default function CrimePageMain() {
   };
 
   return (
-    <Grid container spacing={2}>
+    <>
+      <Grid container spacing={2}>
       <Grid xs={10}>
         <Item sx={{
           backgroundImage:
@@ -40,7 +45,8 @@ export default function CrimePageMain() {
            value === 2 ? `url(${enigmaBG})`
            :
            ''
-          , backgroundSize:'cover' 
+          , backgroundSize:'cover' ,
+          height:'92vh',
           }}>
           <CrimePageColContainer>
             <CrimePageTables value={value} />
@@ -54,7 +60,15 @@ export default function CrimePageMain() {
           </CrimePageColContainer>
         </Item>
       </Grid>
-    </Grid>
+      </Grid>
+      <div>
+        <Link to='/' style={{textDecoration:'none', color:'#fff'}}>
+        <Button size='medium' sx={{mt:'5px',width:'150px'}} variant="contained" startIcon={<ArrowBackIcon size='large'/>}>
+          بازگشت
+        </Button>
+        </Link>
+    </div>
+    </>
   )
 }
 
