@@ -34,11 +34,15 @@ function TabPanel(props) {
   };
   
 export default function CrimePageTables({value}) {
-  const [streetSearch, setStreetSearch] = React.useState('')
   const [crimes, setCrimes] = React.useState([])
   const [selected, setSelected] = React.useState([]);
   const [clues, setClues] = React.useState([]);
   const [page, setPage] = React.useState(0);
+  
+  // crime scene api search
+  const [streetSearch, setStreetSearch] = React.useState('')
+  const [crimeSceneSearchDesc, setCrimeSceneSearchDesc] = React.useState('')
+  const [crimeSceneSearchDate, setCrimeSceneSearchDate] = React.useState('')
 
   return (
     <>
@@ -52,8 +56,17 @@ export default function CrimePageTables({value}) {
           setClues = {setClues}
           page = {page}
           setPage = {setPage}
+        crimeSceneSearchDesc={crimeSceneSearchDesc}
+        crimeSceneSearchDate={crimeSceneSearchDate}
         />
-        <SearchInput streetSearch={streetSearch} setStreetSearch={setStreetSearch} />
+        <SearchInput 
+        streetSearch={streetSearch} 
+        setStreetSearch={setStreetSearch} 
+        crimeSceneSearchDate={crimeSceneSearchDate}
+        setCrimeSceneSearchDate={setCrimeSceneSearchDate}
+        crimeSceneSearchDesc={crimeSceneSearchDesc}
+        setCrimeSceneSearchDesc={setCrimeSceneSearchDesc}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Clues 

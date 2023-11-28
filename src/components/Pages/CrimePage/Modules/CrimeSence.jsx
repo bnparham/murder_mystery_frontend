@@ -195,21 +195,26 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function CrimeSence({crimes, setCrimes, streetSearch, selected, setSelected, setClues, page, setPage}) {
+export default function CrimeSence({crimes, setCrimes, streetSearch, selected, setSelected, setClues, page, setPage, crimeSceneSearchDate, crimeSceneSearchDesc}) {
 
     useEffect(
         function(){
             async function fetchUserData () {
-                fetch(`http://127.0.0.1:8000/api/cime-scene/?search=${streetSearch}`)
+                fetch(`http://127.0.0.1:8000/api/cime-scene/`)
                 .then(response => {
                     return response.json()
                 })
                 .then(data => {
-                    setCrimes(data)
+                    setCrimes(data
+                      .filter(obj => streetSearch !== '' ? obj.location_id.name.includes(streetSearch) : obj)
+                      .filter(obj => crimeSceneSearchDesc !== '' ? obj.description.includes(crimeSceneSearchDesc) : obj)
+                      .filter(obj => crimeSceneSearchDate !== '' ? new Date(obj.date) >= new Date(crimeSceneSearchDate) : obj)
+                    )
+                    
                 })
         }
         fetchUserData()
-        },[streetSearch, setCrimes])
+        },[streetSearch, setCrimes, crimeSceneSearchDate, crimeSceneSearchDesc])
       
 
         useEffect(
@@ -227,6 +232,7 @@ export default function CrimeSence({crimes, setCrimes, streetSearch, selected, s
           }
           ,[selected, setClues]
       )
+
 
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
