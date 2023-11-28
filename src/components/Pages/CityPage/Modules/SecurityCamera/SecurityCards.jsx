@@ -40,13 +40,14 @@ export default function SecurityCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'40vh', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
-            height="100"
+            height="100%"
             image={imgs.cameraDark}
             alt={`${card.license_plate.license_plate}`}
+            sx={{backgroundColor:'#071636'}}
           />
+        <CardContent sx={{height:'18vh', backgroundColor:'#071636'}}>
             <Typography sx={{margin:'10px 0'}} color={'#fff'} gutterBottom variant="h5" component="div">
               : شماره پلاک 
             </Typography>
