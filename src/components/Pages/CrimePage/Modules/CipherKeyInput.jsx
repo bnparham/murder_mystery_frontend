@@ -128,7 +128,6 @@ export default function CipherKeyInput({setKeyValue}) {
             </MenuItem>
           ))}
         </TextField>
-
     </Box>
   )
 }

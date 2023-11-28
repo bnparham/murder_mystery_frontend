@@ -42,6 +42,31 @@ function caesarCipher(text, key) {
   
     return result;
   }
+
+  function caesarDecipher(text, key) {
+    let result = '';
+  
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+  
+      if (char.match(/[a-z]/i)) {
+        const isUpperCase = char === char.toUpperCase();
+        const charCode = char.charCodeAt(0);
+        const offset = isUpperCase ? 65 : 97;
+  
+        // Reverse the shift operation for decryption
+        const shiftedCharCode = ((charCode - offset - key + 26) % 26) + offset;
+  
+        result += String.fromCharCode(shiftedCharCode);
+      } else {
+        // If the character is not a letter, keep it unchanged.
+        result += char;
+      }
+    }
+  
+    return result;
+  }
+  
   
   // Example usage:
 //   const plaintext = "Hello, World!";
@@ -54,6 +79,8 @@ function caesarCipher(text, key) {
 export default function Encryption() {
     const [text, setText] = React.useState('')
     const [keyValue, setKeyValue] = React.useState(0)
+    const [codeType, setCodeType] = React.useState('')
+
   return (
     <Box sx={{ flexGrow: 1}}>
       <Grid container spacing={2}>
@@ -71,7 +98,7 @@ export default function Encryption() {
                 rows={4}
                 sx = {{backgroundColor:"#22c99480"}}
                 spellCheck={false}
-                value = {`${caesarCipher(text, Number(keyValue))}`}
+                value = {`${caesarDecipher(text, Number(keyValue))}`}
                 inputProps={{
                     style:{fontSize:22, lineHeight:1.6, padding:4, color:'#fff'}
                 }}
