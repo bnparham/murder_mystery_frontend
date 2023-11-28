@@ -22,7 +22,7 @@ export default function FlightCard({card}) {
           <>
           <CardMedia
             component="img"
-            height="270"
+            height="100%"
             image={imgs.flightCardImg}
             alt={`${card.origin_airport_id.full_name}-${card.destination_airport_id.full_name}`}
           />
@@ -43,7 +43,7 @@ export default function FlightCard({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'372px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'430px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"

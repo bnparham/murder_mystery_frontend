@@ -16,7 +16,7 @@ export default function PassengerCard({card}) {
           <>
           <CardMedia
             component="img"
-            height="270"
+            height="100%"
             image={imgs.passengerCardImg}
             alt={`${card.person_id.name}`}
           />

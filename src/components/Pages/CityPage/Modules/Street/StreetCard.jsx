@@ -12,7 +12,7 @@ export default function StreetCard({card}) {
       <CardActionArea>
       <CardMedia
             component="img"
-            height="270"
+            height="100%"
             image={imgs.streetCardImg}
             alt={`${card.name}-${card.location_id.name}`}
           />

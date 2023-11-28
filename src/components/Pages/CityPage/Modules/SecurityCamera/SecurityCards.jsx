@@ -25,7 +25,7 @@ export default function SecurityCards({card}) {
           <>
           <CardMedia
             component="img"
-            height="270"
+            height="100%"
             image={imgs.securityCameraCardImg}
             alt={`${card.license_plate.license_plate}`}
           />
@@ -40,7 +40,7 @@ export default function SecurityCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'315px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'382px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"

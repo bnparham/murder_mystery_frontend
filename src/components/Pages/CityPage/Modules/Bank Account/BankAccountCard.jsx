@@ -20,7 +20,7 @@ export default function BankAccountCard({card}) {
           <>
           <CardMedia
             component="img"
-            height="270"
+            height="100%"
             image={imgs.BankAccountImg}
             alt={`${card.account_number}`}
           />

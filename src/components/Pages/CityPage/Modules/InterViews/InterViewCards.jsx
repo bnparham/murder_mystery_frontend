@@ -19,7 +19,7 @@ export default function InterViewCards({card}) {
           <>
           <CardMedia
             component="img"
-            height="270"
+            height="100%"
             image={imgs.interviewCardImg}
             alt={`${card.name}-${card.date}`}
           />
