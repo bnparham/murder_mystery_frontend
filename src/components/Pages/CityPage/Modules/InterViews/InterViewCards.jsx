@@ -11,8 +11,8 @@ export default function InterViewCards({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395}}>
-      <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
+    <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
+      <CardActionArea sx={{p:0}}>
         {
           isOpen === true
           ?
@@ -39,13 +39,13 @@ export default function InterViewCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'327px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
-            height="100"
+            sx={{height:'150px',width:'150px', display:'inline'}}
             image={imgs.interviewDark}
             alt={`${card.name}-${card.date}`}
           />
+        <CardContent sx={{height:'100%'}}>
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '20px 0'}}>
               <Typography variant="subtitle2" color="#ffff">
                 شرح : {card.transcript}

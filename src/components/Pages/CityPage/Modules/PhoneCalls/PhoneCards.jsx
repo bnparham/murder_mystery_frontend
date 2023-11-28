@@ -18,7 +18,7 @@ export default function PhoneCards({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636'}}>
+    <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
       <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
         {
           isOpen === true
