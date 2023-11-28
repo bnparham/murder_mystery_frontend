@@ -17,7 +17,7 @@ export default function SecurityCards({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395}}>
+    <Card sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'45vh', backgroundColor:isOpen ? '' : '#071636'}}>
       <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
         {
           isOpen === true
@@ -40,14 +40,13 @@ export default function SecurityCards({card}) {
           </>
         :
         <>
+        <CardContent sx={{height:'100%'}}>
         <CardMedia
             component="img"
-            height="100%"
+            sx={{height:'150px',width:'150px', display:'inline'}}
             image={imgs.cameraDark}
             alt={`${card.license_plate.license_plate}`}
-            sx={{backgroundColor:'#071636'}}
           />
-        <CardContent sx={{height:'18vh', backgroundColor:'#071636'}}>
             <Typography sx={{margin:'10px 0'}} color={'#fff'} gutterBottom variant="h5" component="div">
               : شماره پلاک 
             </Typography>
