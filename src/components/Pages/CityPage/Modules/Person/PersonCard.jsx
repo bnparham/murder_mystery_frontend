@@ -18,8 +18,8 @@ export default function PersonCard({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395}}>
-      <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
+    <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
+      <CardActionArea sx={{p:0}}>
         {
           isOpen === true
           ?
@@ -38,13 +38,13 @@ export default function PersonCard({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'295px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
-            height="100"
+            sx={{height:'150px',width:'150px', display:'inline'}}
             image={imgs.personDark}
             alt={`${card.name}`}
           />
+        <CardContent sx={{height:'100%'}}>
             <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="subtitle2">
                 : پاسپورت
             </Typography>

@@ -8,7 +8,7 @@ import {imgs} from '../../CityPageTables'
 export default function StreetCard({card}) {
 
   return (
-    <Card sx={{ maxWidth: 395}}>
+    <Card sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', cursor:'pointer'}}>
       <CardActionArea>
       <CardMedia
             component="img"

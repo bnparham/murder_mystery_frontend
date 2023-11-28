@@ -10,15 +10,15 @@ export default function AirportCard({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395}}>
-      <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
+    <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
+      <CardActionArea sx={{p:0}}>
       {
         isOpen === true
         ?
         <>
         <CardMedia
             component="img"
-            height="100%"
+            height='100%'
             image={imgs.AirportImg}
             alt={`${card.full_name}-${card.city}`}
           />
@@ -33,13 +33,13 @@ export default function AirportCard({card}) {
         </>
         :
         <>
-        <CardContent sx={{height:'318px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
-            height="100"
+            height='100%'
             image={imgs.AirportDark}
             alt={`${card.full_name}`}
           />
+        <CardContent sx={{height:'100%'}}>
           </CardContent>
         </>
       }
