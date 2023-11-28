@@ -14,7 +14,7 @@ export default function FlightCard({card}) {
 
 
   return (
-    <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'53vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
+    <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'55vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
       <CardActionArea sx={{p:0}}>
         {
           isOpen === true
