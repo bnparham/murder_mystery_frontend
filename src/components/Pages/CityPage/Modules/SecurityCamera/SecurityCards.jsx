@@ -40,7 +40,7 @@ export default function SecurityCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'382px', backgroundColor:'#071636'}}>
+        <CardContent sx={{height:'40vh', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
             height="100"
