@@ -19,7 +19,7 @@ export default function PhoneCards({card}) {
 
   return (
     <Card onClick={() => (setIsOpen(e => !e))} sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636', cursor:'pointer'}}>
-      <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
+      <CardActionArea sx={{p:0}}>
         {
           isOpen === true
           ?
