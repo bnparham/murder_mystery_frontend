@@ -18,7 +18,7 @@ export default function PhoneCards({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395}}>
+    <Card sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636'}}>
       <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
         {
           isOpen === true
@@ -41,13 +41,13 @@ export default function PhoneCards({card}) {
           </>
         :
         <>
-        <CardContent sx={{height:'315px', backgroundColor:'#071636'}}>
         <CardMedia
             component="img"
-            height="100"
+            sx={{height:'150px',width:'150px', display:'inline'}}
             image={imgs.phoneDark}
             alt={`${card.caller.phone_number}`}
           />
+        <CardContent sx={{height:'100%'}}>
             <Typography sx={{margin:'10px 0'}} color={'#fff'} variant="h6">
                 : دریافت کننده
             </Typography>

@@ -17,7 +17,7 @@ export default function SecurityCards({card}) {
   const [isOpen, setIsOpen] = React.useState(true)
 
   return (
-    <Card sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'45vh', backgroundColor:isOpen ? '' : '#071636'}}>
+    <Card sx={{ maxWidth: 395, boxShadow:'1px solid #000', height:'50vh', backgroundColor:isOpen ? '' : '#071636'}}>
       <CardActionArea onClick={() => (setIsOpen(e => !e))} sx={{p:0}}>
         {
           isOpen === true
