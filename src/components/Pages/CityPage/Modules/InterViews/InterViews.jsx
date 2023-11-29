@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 import InterViewCards from './InterViewCards'
 
-export default function InterViews({interviewData, setInterviewData, interviewSearchDate}) {
+export default function InterViews({interviewData, setInterviewData, interviewSearchDate, interViewNameSearch}) {
 
     useEffect(
         function(){
@@ -33,9 +33,10 @@ export default function InterViews({interviewData, setInterviewData, interviewSe
             function () { 
                 setCurrentData(interviewData
                     .filter(obj => interviewSearchDate !== '' ? new Date(obj.date) >= new Date(interviewSearchDate) : obj)
+                    .filter(obj => interViewNameSearch !== '' ? obj.street_id.name.includes(interViewNameSearch) : obj)
                 )
              },
-            [interviewData, interviewSearchDate]
+            [interviewData, interviewSearchDate, interViewNameSearch]
         )
 
         // count page

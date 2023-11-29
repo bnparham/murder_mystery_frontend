@@ -115,6 +115,8 @@ export default function CityPageTables({value}) {
   // interView section
   const [interviewData, setInterviewData] = React.useState([])
   const [interviewSearchDate, setInterViewSearchDate] = React.useState('')
+  const [interViewNameSearch, setInterViewNameSearch] = React.useState([])
+
 
 
   // bank section
@@ -197,10 +199,13 @@ export default function CityPageTables({value}) {
           interviewData = {interviewData}
           setInterviewData = {setInterviewData}
           interviewSearchDate = {interviewSearchDate}
+          interViewNameSearch={interViewNameSearch}
         />
         <InterViewSearchInput
           interviewSearchDate = {interviewSearchDate}
           setInterViewSearchDate = {setInterViewSearchDate}
+          interViewNameSearch={interViewNameSearch}
+          setInterViewNameSearch={setInterViewNameSearch}
         />
       </TabPanel>
       <TabPanel value={value} index={3}>

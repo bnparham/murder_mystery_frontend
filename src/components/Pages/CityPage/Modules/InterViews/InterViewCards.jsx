@@ -27,6 +27,9 @@ export default function InterViewCards({card}) {
             <Typography gutterBottom variant="subtitle2" component="div">
               نام : {card.name}
             </Typography>
+            <Typography gutterBottom variant="subtitle2" component="div">
+              خیابان : {card.street_id.name}
+            </Typography>
 
             <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', margin: '5px 0'}}>
               <Typography color={'#000'} variant="subtitle2">

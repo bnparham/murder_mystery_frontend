@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function InterViewSearchInput({setInterViewSearchDate, interviewSearchDate}) {
+export default function InterViewSearchInput({setInterViewSearchDate, interviewSearchDate, interViewNameSearch, setInterViewNameSearch}) {
 
   return (
     <Box
@@ -24,6 +24,17 @@ export default function InterViewSearchInput({setInterViewSearchDate, interviewS
           onChange={(e) => setInterViewSearchDate(e.target.value)}
           value={interviewSearchDate}
         />
+
+      <TextField
+          id="standard-search"
+          label="جستجو بر اساس نام خیابان"
+          type="search"
+          variant="standard"
+          color="secondary"
+          onChange={(e) => setInterViewNameSearch(e.target.value)}
+          value={interViewNameSearch}
+        />
+
       </div>
       
     </Box>
