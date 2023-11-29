@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import CustomPagination from '../CustomPagination';
 import BankAccountCard from './BankAccountCard'
 
-export default function BankAccount({bankData, setBankData, bankAccountSearch, bankAccountSearchDate}) {
+export default function BankAccount({bankData, setBankData, bankAccountSearch, bankAccountSearchDate, bankAccountNumberSearch}) {
 
     useEffect(
         function(){
@@ -36,9 +36,10 @@ export default function BankAccount({bankData, setBankData, bankAccountSearch, b
                 setCurrentData(bankData
                     .filter(obj => bankAccountSearchDate !== '' ? new Date(obj.date) >= new Date(bankAccountSearchDate) : obj)
                     .filter(obj => bankAccountSearch !== '' ? obj.person_id.name.includes(bankAccountSearch) : obj)
+                    .filter(obj => bankAccountNumberSearch !== '' ? obj.account_number.toString().includes(bankAccountNumberSearch) : obj)
                 )
              },
-            [bankData, bankAccountSearch, bankAccountSearchDate]
+            [bankData, bankAccountSearch, bankAccountSearchDate, bankAccountNumberSearch]
         )
         
         // count page

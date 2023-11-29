@@ -122,6 +122,7 @@ export default function CityPageTables({value}) {
   // bank section
   const [bankData, setBankData] = React.useState([])
   const [atmStreetSearch, setAtmStreetSearch] = React.useState([])
+  const [bankAccountNumberSearch, setBankAccountNumberSearch] = React.useState([])
   const [atmSearchDate, setAtmSearchDate] = React.useState('')
   const [atmRadio, setAtmRadio] = React.useState('')
 
@@ -214,12 +215,15 @@ export default function CityPageTables({value}) {
           setBankData = {setBankData}
           bankAccountSearch = {bankAccountSearch}
           bankAccountSearchDate = {bankAccountSearchDate}
+          bankAccountNumberSearch = {bankAccountNumberSearch}
         />
         <BankAccountSearchInput
           bankAccountSearch = {bankAccountSearch}
           bankAccountSearchDate = {bankAccountSearchDate} 
           setBankAccountSearch = {setBankAccountSearch}
           setBankAccountSearchDate = {setBankAccountSearchDate}
+          setBankAccountNumberSearch = {setBankAccountNumberSearch}
+          bankAccountNumberSearch = {bankAccountNumberSearch}
         />
       </TabPanel>
       <TabPanel value={value} index={4}>

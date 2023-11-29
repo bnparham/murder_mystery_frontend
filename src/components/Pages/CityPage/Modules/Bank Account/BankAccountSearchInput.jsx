@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function BankAccountSearchInput({setBankAccountSearch, bankAccountSearch, setBankAccountSearchDate, bankAccountSearchDate}) {
+export default function BankAccountSearchInput({setBankAccountSearch, bankAccountSearch, setBankAccountSearchDate, bankAccountSearchDate, setBankAccountNumberSearch, bankAccountNumberSearch}) {
 
   return (
     <Box
@@ -24,6 +24,15 @@ export default function BankAccountSearchInput({setBankAccountSearch, bankAccoun
           color="secondary"
           onChange={(e) => setBankAccountSearch(e.target.value)}
           value={bankAccountSearch}
+        />
+        <TextField
+          id="standard-search"
+          label="جستجو بر اساس شماره حساب"
+          type="search"
+          variant="standard"
+          color="secondary"
+          onChange={(e) => setBankAccountNumberSearch(e.target.value)}
+          value={bankAccountNumberSearch}
         />
         <TextField
           id="standard-search"
