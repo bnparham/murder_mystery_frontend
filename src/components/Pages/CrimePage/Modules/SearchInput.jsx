@@ -15,7 +15,7 @@ export default function SearchInput({setStreetSearch, streetSearch, setCrimeScen
       <div>
         <TextField
           id="standard-search"
-          label="جستجو بر اساس خیابان"
+          label="جستجو بر اساس لوکیشن"
           type="search"
           variant="standard"
           color="secondary"
