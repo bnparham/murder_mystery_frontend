@@ -4,7 +4,7 @@ import CustomPagination from '../CustomPagination';
 import PersonCard from './PersonCard';
 
 
-export default function Person({personData, setPersonData,personPhoneNumberSearch,personPassportSearch,personLicenseSearch}) {
+export default function Person({personData, setPersonData,personPhoneNumberSearch,personPassportSearch,personLicenseSearch, personNameSearch}) {
 
     useEffect(
         function(){
@@ -38,9 +38,10 @@ export default function Person({personData, setPersonData,personPhoneNumberSearc
                     .filter(obj => personPhoneNumberSearch !== '' ? obj.phone_number.toString().includes(personPhoneNumberSearch) : obj)
                     .filter(obj => personLicenseSearch !== '' ? obj.license_plate.toString().includes(personLicenseSearch) : obj)
                     .filter(obj => personPassportSearch !== '' ? obj.passport_number.toString().includes(personPassportSearch) : obj)
+                    .filter(obj => personNameSearch !== '' ? obj.name.includes(personNameSearch) : obj)
                 )
              },
-            [personData, personLicenseSearch, personPhoneNumberSearch, personPassportSearch]
+            [personData, personLicenseSearch, personPhoneNumberSearch, personPassportSearch, personNameSearch]
         )
         
         // count page

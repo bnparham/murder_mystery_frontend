@@ -157,6 +157,7 @@ export default function CityPageTables({value}) {
   const [personPhoneNumberSearch, setPersonPhoneNumberSearch] = React.useState('')
   const [personPassportSearch, setPersonPassportSearch] = React.useState('')
   const [personLicenseSearch, setPersonLicenseSearch] = React.useState('')
+  const [personNameSearch, setPersonNameSearch] = React.useState('')
 
   return (
     <>
@@ -299,6 +300,7 @@ export default function CityPageTables({value}) {
           personPhoneNumberSearch = {personPhoneNumberSearch}
           personPassportSearch = {personPassportSearch}
           personLicenseSearch = {personLicenseSearch}
+          personNameSearch={personNameSearch}
         />
         <PersonSearchInput
           personPhoneNumberSearch = {personPhoneNumberSearch}
@@ -307,6 +309,8 @@ export default function CityPageTables({value}) {
           setPersonPhoneNumberSearch = {setPersonPhoneNumberSearch}
           setPersonPassportSearch = {setPersonPassportSearch}
           setPersonLicenseSearch = {setPersonLicenseSearch}
+          personNameSearch={personNameSearch}
+          setPersonNameSearch={setPersonNameSearch}
         />
       </TabPanel>
     </>

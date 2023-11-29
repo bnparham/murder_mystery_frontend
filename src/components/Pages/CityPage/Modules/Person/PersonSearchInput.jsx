@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function PersonSearchInput({setPersonPhoneNumberSearch, personPhoneNumberSearch, setPersonPassportSearch, personPassportSearch, setPersonLicenseSearch, personLicenseSearch}) {
+export default function PersonSearchInput({setPersonPhoneNumberSearch, personPhoneNumberSearch, setPersonPassportSearch, personPassportSearch, setPersonLicenseSearch, personLicenseSearch, personNameSearch, setPersonNameSearch}) {
 
   return (
     <Box
@@ -42,6 +42,15 @@ export default function PersonSearchInput({setPersonPhoneNumberSearch, personPho
           color="secondary"
           onChange={(e) => setPersonPassportSearch(e.target.value)}
           value={personPassportSearch}
+        />
+          <TextField
+          id="standard-search"
+          label="جستجو بر اساس نام شخص"
+          type="search"
+          variant="standard"
+          color="secondary"
+          onChange={(e) => setPersonNameSearch(e.target.value)}
+          value={personNameSearch}
         />
       </div>
       
