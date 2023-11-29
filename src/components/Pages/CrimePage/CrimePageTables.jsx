@@ -79,7 +79,7 @@ export default function CrimePageTables({value}) {
       <TabPanel value={value} index={2}>
         <Encryption/>
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      {/* <TabPanel value={value} index={3}>
         Item Four
       </TabPanel>
       <TabPanel value={value} index={4}>
@@ -90,7 +90,7 @@ export default function CrimePageTables({value}) {
       </TabPanel>
       <TabPanel value={value} index={6}>
         Item Seven
-      </TabPanel>
+      </TabPanel> */}
     </>
   )
 }
