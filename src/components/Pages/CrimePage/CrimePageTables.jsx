@@ -6,6 +6,7 @@ import CrimeSence from './Modules/CrimeSence';
 import SearchInput from './Modules/SearchInput';
 import Clues from './Modules/Clues';
 import Encryption from './Modules/Encryption';
+import TicTocToe from './Modules/TicTocToe/TicTocToe';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -79,10 +80,10 @@ export default function CrimePageTables({value}) {
       <TabPanel value={value} index={2}>
         <Encryption/>
       </TabPanel>
-      {/* <TabPanel value={value} index={3}>
-        Item Four
+      <TabPanel value={value} index={3}>
+        <TicTocToe/>
       </TabPanel>
-      <TabPanel value={value} index={4}>
+      {/* <TabPanel value={value} index={4}>
         Item Five
       </TabPanel>
       <TabPanel value={value} index={5}>

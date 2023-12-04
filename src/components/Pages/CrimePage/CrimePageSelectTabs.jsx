@@ -39,8 +39,8 @@ export default function CrimePageSelectTabs({value, handleChange}) {
         <Tab sx={{color:'#fff'}} label="جدول جرائم" {...a11yProps(0)} />
         <Tab sx={{color:'#fff'}} label="مدارک محل جرم" {...a11yProps(1)} />
         <Tab sx={{color:'#fff'}} label="رمز نگاری" {...a11yProps(2)} />
-        {/* <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
+        <Tab sx={{color:'#fff'}} label="X/O بازی" {...a11yProps(3)} />
+        {/* <Tab label="Item Five" {...a11yProps(4)} />
         <Tab label="Item Six" {...a11yProps(5)} />
         <Tab label="Item Seven" {...a11yProps(6)} /> */}
       </Tabs>

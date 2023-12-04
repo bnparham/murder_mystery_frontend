@@ -42,7 +42,9 @@ export default function CrimePageMain() {
            :
            value === 1 ? `url(${tableBG})`
            :
-           value === 2 ? `url(${enigmaBG})`
+           value === 2 ? `url(${enigmaBG})`:
+
+           value === 3 ? `url(${whiteBG})`
            :
            ''
           , backgroundSize:'cover' ,
