@@ -110,41 +110,51 @@ export default function TicTocToe() {
 
   useEffect(
     function(){
-      for (let row = 0; row < board.length; row++) {
-        for (let col = 0; col < board.length; col++) {
-          if(board[row][col] === 'O'){
-            const selectBox = document.querySelector(`#box${row}${col}`)
-            selectBox.innerHTML = `<img src=${circle_icon}>`
-
-            setBtnDisable(prevState => {
-              // Create a new array with the same structure as the previous state
-              return prevState.map((rowArray, rowIndex) => {
-                // If it's the targeted row, update the value at the specified column
-                if (rowIndex === row) {
-                  return rowArray.map((value, colIndex) => (colIndex === col ? true : value));
-                }
-                // If it's not the targeted row, return the original rowArray
-                return rowArray;
+      function updateScreen(){
+        for (let row = 0; row < board.length; row++) {
+          for (let col = 0; col < board.length; col++) {
+            if(board[row][col] === 'O'){
+              const selectBox = document.querySelector(`#box${row}${col}`)
+              selectBox.innerHTML = `<img src=${circle_icon}>`
+  
+              setBtnDisable(prevState => {
+                // Create a new array with the same structure as the previous state
+                return prevState.map((rowArray, rowIndex) => {
+                  // If it's the targeted row, update the value at the specified column
+                  if (rowIndex === row) {
+                    return rowArray.map((value, colIndex) => (colIndex === col ? true : value));
+                  }
+                  // If it's not the targeted row, return the original rowArray
+                  return rowArray;
+                });
               });
-            });
-      
+        
+            }
           }
         }
-      }
-      if(winner == null){
-        if(terminal === true){
-          setTitle('🥶بازی مساوی شد ')
+        if(winner == null){
+          if(terminal === true){
+            setTitle('🥶بازی مساوی شد ')
+          }
+          else{
+            setTitle('🤠 نوبت توعه')
+          }
         }
-        else{
-          setTitle('🤠 نوبت توعه')
+        else if (winner === 'X'){
+          setTitle('👻 برنده شدی ')
+        }
+        else if (winner === 'O'){
+          setTitle('باختی!😖 دوباره تلاش کن')
         }
       }
-      else if (winner === 'X'){
-        setTitle('👻 برنده شدی ')
-      }
-      else if (winner === 'O'){
-        setTitle('باختی!😖 دوباره تلاش کن')
-      }
+
+    // Introduce a 2-second delay before running updateScreen
+    const delay = 1000;
+    const timeoutId = setTimeout(updateScreen, delay);
+
+    // Clear the timeout to avoid executing updateScreen if the component unmounts before the delay
+    return () => clearTimeout(timeoutId);
+
     },[winner, terminal, board]
   )
 
