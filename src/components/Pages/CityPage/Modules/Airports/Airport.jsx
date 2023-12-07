@@ -28,6 +28,16 @@ export default function Airport({airportData, setAirportData, airportSearch}) {
         const startIndex = (currentPage - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
         
+        // Function to shuffle the array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        // Shuffle the array of objects
+        shuffleArray(airportData);
+
         // Get the data to display on the current page.
         const [currentData, setCurrentData] = React.useState(airportData)
 

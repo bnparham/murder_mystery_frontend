@@ -217,6 +217,16 @@ export default function CrimeSence({crimes, setCrimes, streetSearch, selected, s
         },[streetSearch, setCrimes, crimeSceneSearchDate, crimeSceneSearchDesc])
       
 
+        // Function to shuffle the array
+        function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [array[i], array[j]] = [array[j], array[i]];
+          }
+      }
+      // Shuffle the array of objects
+      shuffleArray(crimes);
+        
         useEffect(
           function(){
               async function fetchClueData () {
